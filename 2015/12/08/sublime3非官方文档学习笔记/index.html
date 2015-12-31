@@ -1,0 +1,797 @@
+<!doctype html>
+<html class="theme-next   use-motion ">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Sublime," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=0.4.5.2" />
+
+
+
+
+
+
+<meta name="description" content="Sublime是一款非常好用的代码编辑器，支持Windows、OS X和Linux。目前稳定的版本时2.0.2，Sublime Text3还在测试当中。可以直接从官网下载对应的版本，推荐Sublime Text3，新的版本提供的功能更多。对于一个操作系统，官方提供full version和portable version两个版本，其中full version是普通的安装程序，portable ve">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Sublime Text3非官方文档学习笔记">
+<meta property="og:url" content="http://yoursite.com/2015/12/08/sublime3非官方文档学习笔记/index.html">
+<meta property="og:site_name" content="刘贵的博客">
+<meta property="og:description" content="Sublime是一款非常好用的代码编辑器，支持Windows、OS X和Linux。目前稳定的版本时2.0.2，Sublime Text3还在测试当中。可以直接从官网下载对应的版本，推荐Sublime Text3，新的版本提供的功能更多。对于一个操作系统，官方提供full version和portable version两个版本，其中full version是普通的安装程序，portable ve">
+<meta property="og:image" content="http://i.imgur.com/BoQVrnT.png">
+<meta property="og:updated_time" content="2015-12-31T01:42:52.527Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Sublime Text3非官方文档学习笔记">
+<meta name="twitter:description" content="Sublime是一款非常好用的代码编辑器，支持Windows、OS X和Linux。目前稳定的版本时2.0.2，Sublime Text3还在测试当中。可以直接从官网下载对应的版本，推荐Sublime Text3，新的版本提供的功能更多。对于一个操作系统，官方提供full version和portable version两个版本，其中full version是普通的安装程序，portable ve">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: 'post',
+    motion: true
+  };
+</script>
+
+  <title> Sublime Text3非官方文档学习笔记 | 刘贵的博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  <!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+  
+
+
+
+
+
+
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">刘贵的博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">专注web前端开发</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content">
+          
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Sublime Text3非官方文档学习笔记
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2015-12-08T16:42:28+08:00" content="2015-12-08">
+              2015-12-08
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分类于
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Sublime/" itemprop="url" rel="index">
+                    <span itemprop="name">Sublime</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/12/08/sublime3非官方文档学习笔记/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/08/sublime3非官方文档学习笔记/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <span itemprop="articleBody"><p>Sublime是一款非常好用的代码编辑器，支持Windows、OS X和Linux。目前稳定的版本时2.0.2，Sublime Text3还在测试当中。可以直接从<a href="http://www.sublimetext.com/" title="官网" target="_blank" rel="external">官网</a>下载对应的版本，推荐Sublime Text3，新的版本提供的功能更多。对于一个操作系统，官方提供full version和portable version两个版本，其中full version是普通的安装程序，portable version是免安装版本，下载之后解压可直接运行。我下载的是full version，下载后直接双击安装，完成后打开即可。Sublime需要激活，支持正版可以上官网购买，当然也是可以百度到注册码的。</p>
+<p>由于我用的是Windows的操作系统，所以以下内容都是针对Windows系统而言的，在其他系统下快捷键等可能有所不同，但是总体来说差别不大。</p>
+<h2 id="u57FA_u672C_u6982_u5FF5"><a href="#u57FA_u672C_u6982_u5FF5" class="headerlink" title="基本概念"></a>基本概念</h2><p><strong>数据目录</strong>：数据目录存放与sublime功能有关的数据，在不同操作系统下会有所不同，在Windows目录下，full version对应的数据目录位于C:\Users\Administrator\AppData\Roaming\Sublime Text 3，portable版本的数据目录在解压目录的Data/文件夹下。如果你找不到自己的数据目录，可以打开sublime，点击工具栏的Preferences-&gt;Browse Packages, 打开的目录向上返回一级即为数据目录。</p>
+<p><strong>Packages目录</strong>：这个目录位于数据目录下的package文件夹，存放Sublime的功能插件和一些依赖包，非常重要。</p>
+<p><strong>用户目录</strong>：这个文件夹里面保存用户的配置文件，位于packages目录下的User文件夹，是用户的私人目录。</p>
+<p><strong>可编程</strong>：Sublime不仅仅是一款代码编辑器，而且这款软件本身也是可编程了，它<strong>内嵌</strong>了一个Python解析器，并且提供了一些API。点击工具栏的views-&gt;Show Console或者直接按ctrl + `可以打开控制台，如输入sublime.version()可以查看软件版本号。要退出控制台，直接按ESC键。</p>
+<p><strong>插件、包的概念</strong>：Sublime强大的一个地方就在于它丰富的插件，这些插件可以让代码编辑更加便捷，如可以自动补全，自动查错，自动排版等等。这些插件都作为一个包存放在packages目录中。</p>
+<h2 id="u7F16_u8F91"><a href="#u7F16_u8F91" class="headerlink" title="编辑"></a>编辑</h2><p>选中一行： Ctrl + L</p>
+<p>交换两个字母的顺序： Ctrl + T</p>
+<h3 id="u9009_u4E2D"><a href="#u9009_u4E2D" class="headerlink" title="选中"></a>选中</h3><p>如果需要回退选中操作，可以用ctrl + u, u即undo的缩写。<br>注： sublime中有两个撤销快捷键,ctrl + u 和 ctrl + z，区别在于，ctrl + z只会记录对代码的改动，而ctrl + u还会记录光标的选择</p>
+<h4 id="u9488_u5BF9_u591A_u5217_u7684_u9009_u4E2D"><a href="#u9488_u5BF9_u591A_u5217_u7684_u9009_u4E2D" class="headerlink" title="针对多列的选中"></a>针对多列的选中</h4><p>效果： 同时选中<strong>多列</strong>中的某一个区域，总体选中一个矩形区域，可以同时对这个区域进行操作，就像对一行代码进行操作一样<br>鼠标操作： 按住shift + 鼠标右键选定，如果需要多区域选定，则选定第二个区域时，按住ctrl + shift + 鼠标右键<br>键盘操作： ctrl + alt + up 或者ctrl + alt + down</p>
+<p><img src="http://i.imgur.com/BoQVrnT.png" alt="多列选中效果"></p>
+<h4 id="u9488_u5BF9_u5355_u8BCD_u7684_u9009_u4E2D"><a href="#u9488_u5BF9_u5355_u8BCD_u7684_u9009_u4E2D" class="headerlink" title="针对单词的选中"></a>针对单词的选中</h4><p>鼠标操作： 双击选中当前这一个单词</p>
+<p>键盘操作： </p>
+<ul>
+<li>ctrl + D选中当前单词，再次按下ctrl + D选择下一个单词，</li>
+<li>ctrl + K表示跳过这个单词，</li>
+<li>alt + f3则可以选择所有的这个单词，包括其他单词中包含的这个单词的部分</li>
+</ul>
+<h4 id="u9488_u5BF9_u591A_u884C_u7684_u9009_u4E2D"><a href="#u9488_u5BF9_u591A_u884C_u7684_u9009_u4E2D" class="headerlink" title="针对多行的选中"></a>针对多行的选中</h4><p>鼠标操作： 直接选中多行，如果分隔的，按住ctrl + 鼠标左键拖动</p>
+<p>键盘操作：<br>ctrl + shift + left和ctrl + shift + right左右选中一行中的某个单词，一行选满后回跳到下一行</p>
+<p>其他的键盘操作</p>
+<ul>
+<li>ctrl + up和ctrl + down上下滚动</li>
+<li>ctrl + shift + up和ctrl + shift + down对选中的内容<strong>所在行</strong>上下移动</li>
+</ul>
+<h2 id="u641C_u7D22_u548C_u66FF_u6362"><a href="#u641C_u7D22_u548C_u66FF_u6362" class="headerlink" title="搜索和替换"></a>搜索和替换</h2><p>Sublime提供两种重要形式的搜索，一种是单文件搜索，另一种是多文件搜索，两种搜索都支持正则表达式。</p>
+<p>要启用单文件搜索，直接按Ctrl + F，如果要启用正则表达式，必须激活正则表达式选项，位于搜索输入框最左侧的按钮点亮。</p>
+<h2 id="u6587_u4EF6_u5BFC_u822A_u548C_u6587_u4EF6_u7BA1_u7406"><a href="#u6587_u4EF6_u5BFC_u822A_u548C_u6587_u4EF6_u7BA1_u7406" class="headerlink" title="文件导航和文件管理"></a>文件导航和文件管理</h2><h3 id="u641C_u7D22_u6587_u4EF6"><a href="#u641C_u7D22_u6587_u4EF6" class="headerlink" title="搜索文件"></a>搜索文件</h3><p>要在项目中搜索某一个文件，可以使用ctrl+p打开搜索框，搜索结果将会显示路径和文件名与输入文本相符的所有文件，使用up和down箭头按钮可以选定某个文件，回车表示打开这个文件。要取消当前搜索，按ESC键。</p>
+<p>高级用法：</p>
+<ol>
+<li>同名的文件可能会有多个，如搜索image.js可能会显示多个文件，需要移动光标去选择自己需要的文件。一种简便的方法是，如果你记得文件的路径，可以在搜索时在文件名之前加上文件的路径，如ct/image.js便会很好的过滤搜索结果。文件路径一般不需要太长，一是太长了输入很慢，反而降低了效率，二是长了也根本记不住，一般网上写一级就可以了。</li>
+<li>搜索文件同时定位文件中具体的位置：输入文件名后，看光标选中的是自己需要的文件后，就可以在输入框加入其它搜索条件对文件中的代码做进一步搜索。如：使用@后输入标识符可以搜索指定的函数或者类名，使用#加标识符可以搜索代码中包含搜索内容的单词并且高亮显示，使用：加数字可以定位到具体的行，回车后与搜索相符合的区域就会显示在屏幕上。</li>
+<li>第二项中提到的功能，不仅仅是在搜索文件时，搜索文件打开之后也可以使用。如使用ctrl + R对应输入@的功能，使用ctrl + ;对应输入#的功能，使用ctrl + G 对应输入：的功能。如果不记得这些快捷键，也可以直接输入ctrl + p然后直接输入@、#、：也可以。这种搜索方式与ctrl + F的不同之处在于搜索更加有针对性，而ctrl + F是搜索文件中的所有内容。</li>
+</ol>
+<h3 id="u4FA7_u8FB9_u680F"><a href="#u4FA7_u8FB9_u680F" class="headerlink" title="侧边栏"></a>侧边栏</h3><p>侧边栏显示当前项目的所有文件，如果是已有的项目，直接将项目文件夹拖到sublime中打开，如果是从sublime开始建立的项目，那么自然会显示在侧边栏。ctrl + p搜索的文件也正是对应着侧边栏的文件。侧边栏和显示区域有着很强的对应关系。显示区域点击右键，选择reveal in Side Bar可以查看当前文件在侧边栏的位置，从而可以帮助用户了解目录结构。</p>
+<p>一般可以直接鼠标操控侧边栏，如果需要键盘控制，用ctrl + 数字0可以将焦点移动到侧边栏上，上下方向键选择文件，左右方向键收起/展开文件夹，回车键打开选中的文件，此时焦点会自动回到编辑区域。如果要手动将焦点回到编辑区域，可以直接按ESC键。</p>
+<h3 id="u9879_u76EE_u6587_u4EF6_u548C_u5DE5_u4F5C_u7A7A_u95F4"><a href="#u9879_u76EE_u6587_u4EF6_u548C_u5DE5_u4F5C_u7A7A_u95F4" class="headerlink" title="项目文件和工作空间"></a>项目文件和工作空间</h3><p>对于每一个项目，可以建立一个.sublime-project为后缀的json文件，文件中可以保存针对这个项目的特定配置。同一个项目可能有多个workspace,对每一个workspace可以建立一个.sublime-workspace为后缀的文件，保存对这个工作空间的特定配置。</p>
+<h3 id="u6805_u683C_u89C6_u56FE"><a href="#u6805_u683C_u89C6_u56FE" class="headerlink" title="栅格视图"></a>栅格视图</h3><p>编辑区域在默认的时候通常只能显示一个文件，如果屏幕比较大，那么可以同时显示多个文件。调整方法是，用鼠标点击views-&gt;layout选择需要的布局，或者用Alt + shift加数字1~9调整。需要注意的是，键盘上的小键盘区域的数字按键对快捷键不起作用，只有键盘主体区域的数字才起作用。</p>
+<h2 id="u4E2A_u6027_u5316"><a href="#u4E2A_u6027_u5316" class="headerlink" title="个性化"></a>个性化</h2><p>用户可以根据自己的喜好配置Sublime，用户的.sublime-settings文件保存在<strong>用户目录</strong>下，用户目录的路径在基本概念部分已经指出，其他路径中也有一些默认的配置文件。在<strong>用户目录</strong>下的配置文件在升级时是不会被覆盖的，可以持久化。配置文件是一个JSON文件，用户目录下可以有多个配置文件，文件名可以由用户自己命名，但必须体现出其意义。修改一个配置文件，其效果就会马上显示出来，但是如果有新增的配置文件，必须重新启动软件才能生效。Preferences.sublime-settings是全局的配置文件，对所有类型文件都会起作用，用户可以针对某一种类型文件进行个性化定制，如Python (Linux).sublime-settings，括号中的内容表示针对不同系统的配置，如果没有则是不区分系统的。注意，用户目录下所有针对不同系统的配置文件都会被自动忽略，这样做的原因是用户只用在这里修改一个文件就可以确保所有平台都会被覆盖。</p>
+<p>点击Preference-&gt;settings - Default可以看到默认的配置文件，在用户目录下的配置文件优先级是最高的，会覆盖默认的配置文件。当然，有些配置值系统会自动调整，也就是用户自己的配置可能不起作用。在控制台中输入<code>view.settings().get(&quot;setting_name&quot;)</code>可以查看特定属性的当前配置。</p>
+<h3 id="u914D_u7F6E_u6587_u4EF6_u7684_u52A0_u8F7D_u987A_u5E8F"><a href="#u914D_u7F6E_u6587_u4EF6_u7684_u52A0_u8F7D_u987A_u5E8F" class="headerlink" title="配置文件的加载顺序"></a>配置文件的加载顺序</h3><ul>
+<li>Packages/Default/Preferences.sublime-settings</li>
+<li>Packages/Default/Preferences (Windows).sublime-settings</li>
+<li>Packages/AnyOtherPackage/Preferences.sublime-settings</li>
+<li>Packages/AnyOtherPackage/Preferences (Windows).sublime-settings</li>
+<li>Packages/User/Preferences.sublime-settings</li>
+<li>Settings from the current project</li>
+<li>Packages/Python/Python.sublime-settings</li>
+<li>Packages/Python/Python (Windows).sublime-settings</li>
+<li>Packages/User/Python.sublime-settings</li>
+<li>Session data for the current file</li>
+<li>Auto-adjusted settings</li>
+</ul>
+<p>按照加载顺序，后面的会覆盖前面的，如同CSS文件的加载顺序一样。</p>
+<h2 id="u5FEB_u6377_u952E_u8BBE_u5B9A"><a href="#u5FEB_u6377_u952E_u8BBE_u5B9A" class="headerlink" title="快捷键设定"></a>快捷键设定</h2><p>Sublime本身提供了很多快捷键，当然用户也可以自己定义快捷键。快捷键定义的文件也是一个JSON文件，以.sublime-keymap结尾，用户可以在用户文件夹下新建Default.sublime-keymap文件覆盖默认的快捷键设置。</p>
+<h2 id="u6269_u5C55Sublime_Text"><a href="#u6269_u5C55Sublime_Text" class="headerlink" title="扩展Sublime Text"></a>扩展Sublime Text</h2><h3 id="u547D_u4EE4"><a href="#u547D_u4EE4" class="headerlink" title="命令"></a>命令</h3><p>命令无处不在，包括快捷键、菜单项和宏命令等组成整个命令系统。也可以打开控制台执行命令。</p>
+<h4 id="u5B8F_u547D_u4EE4"><a href="#u5B8F_u547D_u4EE4" class="headerlink" title="宏命令"></a>宏命令</h4><p>宏命令是一个命令集合，它会自动执行一系列的命令，让操作更简单。可以打开tools-&gt;Macros查看系统提供的基本宏命令。宏命令的定义在一个以.sublime-macro结尾的JOSN文件中。</p>
+<h5 id="u5982_u4F55_u8BB0_u5F55_u5B8F_u547D_u4EE4"><a href="#u5982_u4F55_u8BB0_u5F55_u5B8F_u547D_u4EE4" class="headerlink" title="如何记录宏命令"></a>如何记录宏命令</h5><p>如果你需要反复的进行多个相同的操作，那么使用宏命令可以大大简便。按下ctrl + q开始记录，此时可以看到软件做下角有提示，然后一步一步执行操作，完成后点击ctrl + q保存。那么，刚刚执行的所有操作都保存在宏命令缓存区中，如果之前有其他宏命令，会被覆盖，所以这只是一种不持久化的宏命令。如果要使用，直接按ctrl + shift + q就可以自动执行刚刚的宏命令。</p>
+<p>如果要自定义可以保存的宏命令，需要在package中创建一个.sublime-macro结尾的JOSN文件，在里面写入多个命令，要执行时直接在tools-&gt;Macros里面点击即可。进一步，也可以定义快捷键执行宏文件，从而执行宏命令。</p>
+<h4 id="u7247_u6BB5"><a href="#u7247_u6BB5" class="headerlink" title="片段"></a>片段</h4><p>在编写代码时往往有很多需要重复输入的部分，为了避免不需要的重复，可以把这一部分代码写成一个snippet，直接调用插入即可。Sublime本身提供了一些Snippet，可以在tool-&gt;Snippets中查看，也可以用户自定义，在用户目录中写入一个以.sublime-snippet结尾的JOSN文件，这个文件可以通过tools-&gt;New Snippet创建。</p>
+<p>这个JSON文件包括四个部分：</p>
+<ul>
+<li>content部分：主题内容模版，这是必选的部分</li>
+<li>tabTrigger: 定义触发按键，输入时点击触发按钮并且按Tab键就可以自动插入这个snippet。如写if时，按tab就可以自动补全，这是Sublime默认提供的。可以把<strong>片段</strong>理解成代码自动补全的自定义。</li>
+<li>scope:定义环境范围</li>
+<li>description：在Snippet菜单中显示时的描述</li>
+</ul>
+<h4 id="u8865_u5168"><a href="#u8865_u5168" class="headerlink" title="补全"></a>补全</h4><p>Sublime自带标识符补全的功能，与上面的片段对代码语法的补全不同，这个补全主要是对<strong>已经写过的内容</strong>，在后面写到时会自动弹出已经写过的内容选项列表，非常方便。当然，除了系统自带的补全之外，也可以自定义补全的列表。</p>
+<p>在列表中选择到自己需要的项后，自动补全有两种方法，按回车键或者Tab键。区别在于：按回车键表示当前的补全已经结束，而按Tab键之后还<em>可以继续按多次</em>，继续显示补全列表中下面的项。如果要按Tab键而不让其实现自动补全功能，那么要按shift + Tab。在自动补全列表中其实也会包含Snippet的功能，因为对函数也会自动补全，并且Snippet补全往往占据在补全列表的第一位。</p>
+<h4 id="u547D_u4EE4_u9762_u677F"><a href="#u547D_u4EE4_u9762_u677F" class="headerlink" title="命令面板"></a>命令面板</h4><p>ctrl + shift + p 可以打开命令面板选择对应的命令执行。如果要自定义命令面板，在用户目录下新建一个以.sublime-commands结尾的JSON文件。使用时，用ctrl + shift + p打开，光标选中后回车执行。</p>
+<h4 id="u8BED_u6CD5_u5B9A_u4E49"><a href="#u8BED_u6CD5_u5B9A_u4E49" class="headerlink" title="语法定义"></a>语法定义</h4><p>语法定义就是让Sublime识别编程语言，并且对代码高亮，主要原理是正则表达式匹配，需要安装AAAPackageDev插件，并且写好的以.sublime-syntax为后缀的JSON文件放在用户目录下。</p>
+<h4 id="u63D2_u4EF6"><a href="#u63D2_u4EF6" class="headerlink" title="插件"></a>插件</h4><p>Sublime支持Python插件，目前使用Python 3，熟悉Python的用户可以自己写插件，一般的插件别人都已经开发好了，直接安装使用即可。</p>
+<h4 id="u5305"><a href="#u5305" class="headerlink" title="包"></a>包</h4><p>包是资源的集合，如一个插件就对应一个包。包的存放路径有以下三个：</p>
+<ul>
+<li><strong>数据目录</strong>文件夹下的Packages文件夹</li>
+<li><strong>数据目录</strong>文件夹下的Installed Packages文件夹下面的.sublime-package结尾的文件</li>
+<li>默认的包文件存放在Application/Packages文件夹下，这个文件夹用户不应该改变。</li>
+</ul>
+</span>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Sublime/" rel="tag">#Sublime</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/11/28/clean_code/" rel="next" title="代码整洁之道">
+                <i class="fa fa-chevron-left"></i> 代码整洁之道
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/12/08/2015-12-08交流/" rel="prev" title="2015-12-08交流">
+                2015-12-08交流 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+        </div>
+
+        
+
+
+        
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2015/12/08/sublime3非官方文档学习笔记/"
+           data-title="Sublime Text3非官方文档学习笔记" data-url="http://yoursite.com/2015/12/08/sublime3非官方文档学习笔记/">
+      </div>
+    
+  </div>
+
+
+      </div>
+
+      
+        
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" src="/images/author.jpg" alt="刘贵" itemprop="image"/>
+          <p class="site-author-name" itemprop="name">刘贵</p>
+        </div>
+        <p class="site-description motion-element" itemprop="description">博客，web前端，html，css，html5， css3，JavaScript，backbone，Nodejs，jQuery，OpenSeadragon</p>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            <a href="/categories">
+              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-name">分类</span>
+              </a>
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-name">标签</span>
+              </a>
+          </div>
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="http://github.com/liugui" target="_blank">
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/u/2839022630" target="_blank">
+                  
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+            <p class="site-author-name">友情链接</p>
+            
+              <span class="links-of-author-item">
+                <a href="http://tutuge.me/" target="_blank">全栈土哥</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://raytaylorlin.com/" target="_blank">大神寿寿</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://suta.name/" target="_blank">设计师苏塔</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://vanney9.com/" target="_blank">前后通吃的杰哥</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.syang.xyz/" target="_blank">有钱的赵老板</a>
+              </span>
+            
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#u57FA_u672C_u6982_u5FF5"><span class="nav-number">1.</span> <span class="nav-text">基本概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u7F16_u8F91"><span class="nav-number">2.</span> <span class="nav-text">编辑</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u9009_u4E2D"><span class="nav-number">2.1.</span> <span class="nav-text">选中</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u9488_u5BF9_u591A_u5217_u7684_u9009_u4E2D"><span class="nav-number">2.1.1.</span> <span class="nav-text">针对多列的选中</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u9488_u5BF9_u5355_u8BCD_u7684_u9009_u4E2D"><span class="nav-number">2.1.2.</span> <span class="nav-text">针对单词的选中</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u9488_u5BF9_u591A_u884C_u7684_u9009_u4E2D"><span class="nav-number">2.1.3.</span> <span class="nav-text">针对多行的选中</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u641C_u7D22_u548C_u66FF_u6362"><span class="nav-number">3.</span> <span class="nav-text">搜索和替换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u6587_u4EF6_u5BFC_u822A_u548C_u6587_u4EF6_u7BA1_u7406"><span class="nav-number">4.</span> <span class="nav-text">文件导航和文件管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u641C_u7D22_u6587_u4EF6"><span class="nav-number">4.1.</span> <span class="nav-text">搜索文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u4FA7_u8FB9_u680F"><span class="nav-number">4.2.</span> <span class="nav-text">侧边栏</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u9879_u76EE_u6587_u4EF6_u548C_u5DE5_u4F5C_u7A7A_u95F4"><span class="nav-number">4.3.</span> <span class="nav-text">项目文件和工作空间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u6805_u683C_u89C6_u56FE"><span class="nav-number">4.4.</span> <span class="nav-text">栅格视图</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u4E2A_u6027_u5316"><span class="nav-number">5.</span> <span class="nav-text">个性化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u914D_u7F6E_u6587_u4EF6_u7684_u52A0_u8F7D_u987A_u5E8F"><span class="nav-number">5.1.</span> <span class="nav-text">配置文件的加载顺序</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u5FEB_u6377_u952E_u8BBE_u5B9A"><span class="nav-number">6.</span> <span class="nav-text">快捷键设定</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u6269_u5C55Sublime_Text"><span class="nav-number">7.</span> <span class="nav-text">扩展Sublime Text</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u547D_u4EE4"><span class="nav-number">7.1.</span> <span class="nav-text">命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u5B8F_u547D_u4EE4"><span class="nav-number">7.1.1.</span> <span class="nav-text">宏命令</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#u5982_u4F55_u8BB0_u5F55_u5B8F_u547D_u4EE4"><span class="nav-number">7.1.1.1.</span> <span class="nav-text">如何记录宏命令</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u7247_u6BB5"><span class="nav-number">7.1.2.</span> <span class="nav-text">片段</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u8865_u5168"><span class="nav-number">7.1.3.</span> <span class="nav-text">补全</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u547D_u4EE4_u9762_u677F"><span class="nav-number">7.1.4.</span> <span class="nav-text">命令面板</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u8BED_u6CD5_u5B9A_u4E49"><span class="nav-number">7.1.5.</span> <span class="nav-text">语法定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u63D2_u4EF6"><span class="nav-number">7.1.6.</span> <span class="nav-text">插件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u5305"><span class="nav-number">7.1.7.</span> <span class="nav-text">包</span></a></li></ol></li></ol></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+      
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2015</span>
+  <span class="with-love">
+    <i class="icon-next-heart fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">刘贵</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+
+  
+    
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"liugui"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+    
+     
+
+
+    
+  
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.2"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.2"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+<script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+<script type="text/javascript" src="/js/motion.js?v=0.4.5.2" id="motion.global"></script>
+
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.2" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    motionMiddleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+      if (CONFIG.sidebar === 'post') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  <script type="text/javascript" src="/js/bootstrap.js"></script>
+
+  
+  
+
+  
+  
+
+</body>
+</html>

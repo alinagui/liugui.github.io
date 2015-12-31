@@ -1,0 +1,822 @@
+<!doctype html>
+<html class="theme-next   use-motion ">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=0.4.5.2" />
+
+
+
+
+
+
+<meta name="description" content="Sublime部分基本介绍
+特点：支持多语言、多平台，插件丰富，可编程，实验室Web开发标配
+版本：稳定版2.0.2，最新版Sublime Text3,测试中。标准安装版和免安装版官网链接
+激活：有钱的支持一下正版，没钱的百度一个激活码
+注：以下分析主要针对Windows平台版本，其他平台略有不同，主要差别在于文件路径和快捷键
+
+基本概念
+数据目录：存放于Sublime功能有关的目录，是用户交互的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2015-12-08交流">
+<meta property="og:url" content="http://yoursite.com/2015/12/08/2015-12-08交流/index.html">
+<meta property="og:site_name" content="刘贵的博客">
+<meta property="og:description" content="Sublime部分基本介绍
+特点：支持多语言、多平台，插件丰富，可编程，实验室Web开发标配
+版本：稳定版2.0.2，最新版Sublime Text3,测试中。标准安装版和免安装版官网链接
+激活：有钱的支持一下正版，没钱的百度一个激活码
+注：以下分析主要针对Windows平台版本，其他平台略有不同，主要差别在于文件路径和快捷键
+
+基本概念
+数据目录：存放于Sublime功能有关的目录，是用户交互的">
+<meta property="og:image" content="http://i.imgur.com/BoQVrnT.png">
+<meta property="og:image" content="http://i.imgur.com/ViZQ0gf.jpg">
+<meta property="og:updated_time" content="2015-12-31T01:42:53.938Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="2015-12-08交流">
+<meta name="twitter:description" content="Sublime部分基本介绍
+特点：支持多语言、多平台，插件丰富，可编程，实验室Web开发标配
+版本：稳定版2.0.2，最新版Sublime Text3,测试中。标准安装版和免安装版官网链接
+激活：有钱的支持一下正版，没钱的百度一个激活码
+注：以下分析主要针对Windows平台版本，其他平台略有不同，主要差别在于文件路径和快捷键
+
+基本概念
+数据目录：存放于Sublime功能有关的目录，是用户交互的">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: 'post',
+    motion: true
+  };
+</script>
+
+  <title> 2015-12-08交流 | 刘贵的博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  <!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+  
+
+
+
+
+
+
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">刘贵的博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">专注web前端开发</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content">
+          
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                2015-12-08交流
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2015-12-08T18:17:47+08:00" content="2015-12-08">
+              2015-12-08
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/12/08/2015-12-08交流/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/08/2015-12-08交流/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <span itemprop="articleBody"><h1 id="Sublime_u90E8_u5206"><a href="#Sublime_u90E8_u5206" class="headerlink" title="Sublime部分"></a>Sublime部分</h1><h2 id="u57FA_u672C_u4ECB_u7ECD"><a href="#u57FA_u672C_u4ECB_u7ECD" class="headerlink" title="基本介绍"></a>基本介绍</h2><ul>
+<li>特点：支持多语言、多平台，插件丰富，可编程，实验室Web开发标配</li>
+<li>版本：稳定版2.0.2，最新版Sublime Text3,测试中。标准安装版和免安装版<a href="http://www.sublimetext.com/" title="官网" target="_blank" rel="external">官网链接</a></li>
+<li>激活：有钱的支持一下正版，没钱的百度一个激活码</li>
+<li>注：以下分析主要针对Windows平台版本，其他平台略有不同，主要差别在于文件路径和快捷键</li>
+</ul>
+<h2 id="u57FA_u672C_u6982_u5FF5"><a href="#u57FA_u672C_u6982_u5FF5" class="headerlink" title="基本概念"></a>基本概念</h2><ul>
+<li>数据目录：存放于Sublime功能有关的目录，是用户交互的主目录，标准版在C:\Users\Administrator\AppData\Roaming\Sublime Text 3,免安装版在解压目录Data/文件夹下。Preference-&gt;Browse package，向上一级。</li>
+<li>package目录</li>
+<li>用户目录: 持久化，升级时不会被覆盖</li>
+<li>可编程：views-&gt;Show Console或者ctrl + `,Python</li>
+</ul>
+<h2 id="u7F16_u8F91"><a href="#u7F16_u8F91" class="headerlink" title="编辑"></a>编辑</h2><h3 id="u9009_u4E2D"><a href="#u9009_u4E2D" class="headerlink" title="选中"></a>选中</h3><h4 id="u9488_u5BF9_u591A_u884C_u7684_u9009_u4E2D"><a href="#u9488_u5BF9_u591A_u884C_u7684_u9009_u4E2D" class="headerlink" title="针对多行的选中"></a>针对多行的选中</h4><p>鼠标操作： 直接选中多行，如果分隔的，按住ctrl + 鼠标左键拖动</p>
+<p>键盘操作：<br>ctrl + shift + left和ctrl + shift + right左右选中一行中的某个单词，一行选满后回跳到下一行</p>
+<h4 id="u9488_u5BF9_u591A_u5217_u7684_u9009_u4E2D"><a href="#u9488_u5BF9_u591A_u5217_u7684_u9009_u4E2D" class="headerlink" title="针对多列的选中"></a>针对多列的选中</h4><p>鼠标操作： 按住shift + 鼠标右键选定，如果需要多区域选定，则选定第二个区域时，按住ctrl + shift + 鼠标右键<br>键盘操作： ctrl + alt + up 或者ctrl + alt + down</p>
+<p><img src="http://i.imgur.com/BoQVrnT.png" alt="多列选中效果"></p>
+<h4 id="u9488_u5BF9_u5355_u8BCD_u7684_u9009_u4E2D"><a href="#u9488_u5BF9_u5355_u8BCD_u7684_u9009_u4E2D" class="headerlink" title="针对单词的选中"></a>针对单词的选中</h4><p>鼠标操作： 双击选中当前这一个单词</p>
+<p>键盘操作： </p>
+<ul>
+<li>ctrl + D选中当前单词，再次按下ctrl + D选择下一个单词，</li>
+<li>ctrl + K表示跳过这个单词，</li>
+<li>alt + f3 选中所有，注：选中与高亮不同</li>
+</ul>
+<h3 id="u5176_u4ED6_u7684_u952E_u76D8_u7F16_u8F91_u64CD_u4F5C"><a href="#u5176_u4ED6_u7684_u952E_u76D8_u7F16_u8F91_u64CD_u4F5C" class="headerlink" title="其他的键盘编辑操作"></a>其他的键盘编辑操作</h3><ul>
+<li>ctrl + up和ctrl + down上下滚动</li>
+<li>ctrl + shift + up和ctrl + shift + down对选中的内容<strong>所在行</strong>上下移动</li>
+<li>选中一行： Ctrl + L</li>
+<li>交换两个字母的顺序： Ctrl + T</li>
+</ul>
+<h3 id="u56DE_u9000"><a href="#u56DE_u9000" class="headerlink" title="回退"></a>回退</h3><p>如果需要回退选中操作，可以用ctrl + u, u即undo的缩写。<br>注： sublime中有两个撤销快捷键,ctrl + u 和 ctrl + z，区别在于，ctrl + z只会记录对代码的改动，而ctrl + u还会记录光标的选择</p>
+<h2 id="u641C_u7D22_u548C_u66FF_u6362"><a href="#u641C_u7D22_u548C_u66FF_u6362" class="headerlink" title="搜索和替换"></a>搜索和替换</h2><p>单文件搜索： ctrl + F<br>多文件搜索: ctrl + shift + F（可能会与输入法冲突）<br>替换： ctrl + H<br>设定搜索范围<br>支持正则表达式，激活左侧选项</p>
+<h2 id="u6587_u4EF6_u5BFC_u822A_u548C_u6587_u4EF6_u7BA1_u7406"><a href="#u6587_u4EF6_u5BFC_u822A_u548C_u6587_u4EF6_u7BA1_u7406" class="headerlink" title="文件导航和文件管理"></a>文件导航和文件管理</h2><h3 id="u641C_u7D22_u6587_u4EF6"><a href="#u641C_u7D22_u6587_u4EF6" class="headerlink" title="搜索文件"></a>搜索文件</h3><p>ctrl + p：路径 + 文件名匹配</p>
+<p>高级用法：</p>
+<ul>
+<li>@ 函数或者类-&gt;ctrl + R</li>
+<li>： 具体的行-&gt;<strong>ctrl + G</strong></li>
+<li>‘#’ 特定的单词-&gt;ctrl + ;</li>
+<li>通用：再次ctrl + p</li>
+<li>与ctrl + F不同：针对性</li>
+</ul>
+<p>侧边栏：</p>
+<ul>
+<li>目录结构</li>
+<li>与右侧对应，右键，reveal in Side Bar</li>
+<li>键盘操控：ctrl + 0(数字0),方向键，ESC</li>
+</ul>
+<h2 id="u591A_u89C6_u56FE"><a href="#u591A_u89C6_u56FE" class="headerlink" title="多视图"></a>多视图</h2><p>alt + shift + 1~9（小键盘区域不起作用）<br>views-layout</p>
+<h2 id="u9879_u76EE_u6587_u4EF6_u548C_u5DE5_u4F5C_u7A7A_u95F4"><a href="#u9879_u76EE_u6587_u4EF6_u548C_u5DE5_u4F5C_u7A7A_u95F4" class="headerlink" title="项目文件和工作空间"></a>项目文件和工作空间</h2><p>.sublime-project JSON文件，对应项目配置，如设定缩进规格,布局等<br>同一个project可对应多个workspace，对应不同需求，如打开的文件，布局等。.sublime-workspace JSON文件<br>创建：Project → New Workspace for Project<br>保存：Project → Save Workspace As….<br>切换：ctrl + alt + p,Project-&gt;Quick Switch Project</p>
+<h2 id="u4E2A_u6027_u5316"><a href="#u4E2A_u6027_u5316" class="headerlink" title="个性化"></a>个性化</h2><p>.sublime-settings JSON文件，参考Preference-&gt;settings - Default格式，覆盖默认<br>控制台输入view.settings().get(“setting_name”)查看当前配置</p>
+<h2 id="u81EA_u5B9A_u4E49_u5FEB_u6377_u952E"><a href="#u81EA_u5B9A_u4E49_u5FEB_u6377_u952E" class="headerlink" title="自定义快捷键"></a>自定义快捷键</h2><p>用户目录下Default.sublime-keymap JSON格式文件，格式要求参考官网</p>
+<h2 id="u6269_u5C55Sublime_Text_uFF1A_u81EA_u5B9A_u4E49_u5DF2_u6709"><a href="#u6269_u5C55Sublime_Text_uFF1A_u81EA_u5B9A_u4E49_u5DF2_u6709" class="headerlink" title="扩展Sublime Text：自定义已有"></a>扩展Sublime Text：自定义已有</h2><ul>
+<li>重复性操作-&gt;记录宏命令: ctrl + q,操作，ctrl+q保存，ctrl + shift + q保存</li>
+<li>持久化的宏命令-&gt;package目录下新建.sublime-macro文件，tools-&gt;Macros执行，进一步，定义快捷键执行</li>
+<li>片段：避免输入重复的代码，tab补全，用户目录新建.sublime-snippet的JSON文件，内容定义content、trigger等</li>
+<li>补全：对输入过的，tab可多次，寻找下一个，回车只输入一个，可自定义补全</li>
+<li>命令面板：用户目录下新建.sublime-commands的JSON文件，ctrl + shift + p选中回车执行</li>
+</ul>
+<h1 id="u4EE3_u7801_u6574_u6D01_u4E4B_u9053"><a href="#u4EE3_u7801_u6574_u6D01_u4E4B_u9053" class="headerlink" title="代码整洁之道"></a>代码整洁之道</h1><h2 id="u7B80_u4ECB"><a href="#u7B80_u4ECB" class="headerlink" title="简介"></a>简介</h2><p><img src="http://i.imgur.com/ViZQ0gf.jpg" alt="clean code"></p>
+<ul>
+<li>如何写出整洁、高效、易读的代码</li>
+<li>针对所有代码，以JAVA为例，前七章</li>
+<li>高效、易读、易维护的代码比进度还重要</li>
+<li>later equals never</li>
+</ul>
+<h2 id="u6807_u8BC6_u7B26_u547D_u540D_uFF1A_u6709_u610F_u4E49_uFF0C_u76F8_u4F3C_u6027_u4F4E_uFF0C_u907F_u514D_u524D_u7F00"><a href="#u6807_u8BC6_u7B26_u547D_u540D_uFF1A_u6709_u610F_u4E49_uFF0C_u76F8_u4F3C_u6027_u4F4E_uFF0C_u907F_u514D_u524D_u7F00" class="headerlink" title="标识符命名：有意义，相似性低，避免前缀"></a>标识符命名：有意义，相似性低，避免前缀</h2><ul>
+<li>好的命名应该不需要注释，命名本身应该指向明确-&gt;名副其实</li>
+<li>宁长也要精确，但是长的命名不要太相似，并且要做有意义的区分如productInfo和productData</li>
+<li>易于搜索，易于判断，比如MAX_CLASSES_PER_STUDENT要比数字7易于搜索，意义更明确</li>
+<li><strong>类名</strong>和<strong>对象名</strong>应该是<strong>名词</strong>或者<strong>名词短语</strong>，不应该是动词</li>
+<li><strong>方法名</strong>应当是<strong>动词</strong>和<strong>动词短语</strong></li>
+<li>给每个抽象概念选择一个词，并且<strong>一以贯之</strong>，并且要保持<strong>一词一意</strong>，如fetch,save</li>
+<li><strong>变量名的长度</strong>应该跟<strong>作用域的大小</strong>成正比</li>
+<li>解决方案领域和所涉问题领域：所涉问题领域</li>
+<li>避免加前缀：自动补全列表很长</li>
+</ul>
+<h2 id="u51FD_u6570_uFF1A_u77ED_uFF0C_u53C2_u6570_u5C11_uFF0C_u6BCF_u4E2A_u51FD_u6570_u53EA_u505A_u4E00_u4EF6_u4E8B"><a href="#u51FD_u6570_uFF1A_u77ED_uFF0C_u53C2_u6570_u5C11_uFF0C_u6BCF_u4E2A_u51FD_u6570_u53EA_u505A_u4E00_u4EF6_u4E8B" class="headerlink" title="函数：短，参数少，每个函数只做一件事"></a>函数：短，参数少，每个函数只做一件事</h2><ul>
+<li>函数的长度：每个函数的长度不要超过20行，每个函数的功能必须明确，都<strong>只做一件事</strong>，要根据抽象的层次划分。要确保函<em> </em> 数只做一件事，函数中的语句都要<strong>在同一抽象层级</strong>上</li>
+<li>if等条件语句：包含的代码块应该只有<strong>一行</strong>，这一行是一个函数调用，调用的函数名应该有明显的指向性，指明这个函数完成的操作或者实现的功能</li>
+<li><strong>向下规则：</strong>每个函数后面都跟着位于下一个抽象层级上的函数</li>
+<li>函数的参数：零参数函数最佳，参数越少越好，最多<strong>不要超过三个</strong></li>
+<li>函数命名时必须指定函数的明确功能或者使用条件，否则可能引起误用</li>
+<li>函数的两大功能：要么去做一件事，或者回答一件事，但是二者<strong>不可兼得</strong>，在编写函数时，要将<em>指令</em>和<em>询问</em>分开</li>
+<li>用try-catch代替返回错误码：用try-catch语句进行错误处理，而不是通过返回错误码，因为返回错误码时会将询问和指令混在一起。同时，try-catch语句要分离成单独的函数，才更有明确意义，同时也可以将正常流程与错误处理的两个过程分离</li>
+<li>避免重复：重复的成分越多，代码就越差</li>
+<li>具体实现时，可以先将功能实现，然后按照规则去修改函数</li>
+</ul>
+<h2 id="u6CE8_u91CA_uFF1A_u771F_u6B63_u7684_u597D_u4EE3_u7801_u4E0D_u9700_u8981_u592A_u591A_u6CE8_u91CA_uFF0C_u4F46_u4E0D_u80FD_u4E0D_u5199_u6CE8_u91CA"><a href="#u6CE8_u91CA_uFF1A_u771F_u6B63_u7684_u597D_u4EE3_u7801_u4E0D_u9700_u8981_u592A_u591A_u6CE8_u91CA_uFF0C_u4F46_u4E0D_u80FD_u4E0D_u5199_u6CE8_u91CA" class="headerlink" title="注释：真正的好代码不需要太多注释，但不能不写注释"></a>注释：真正的好代码不需要太多注释，但不能不写注释</h2><ul>
+<li>真正好的代码不需要注释，注释只是用来弥补无法用代码表达意图的失败</li>
+<li>警示注释：可能引起风险的函数，或者使用条件有限制的函数</li>
+<li>TODO注释：以TODO开头，表示将来应该怎么样</li>
+<li>HACK注释：如前端浏览器兼容性问题</li>
+<li>不要保留注释的代码，注释掉的代码在源代码控制系统中可以找到，同样，作者的署名信息也可以在代码控制系统中找到</li>
+</ul>
+<h2 id="u683C_u5F0F_uFF1A_u6A2A_u541180_7E120_uFF0C_u7F29_u8FDB_u4F53_u73B0_u5C42_u7EA7_uFF0C_u7EB5_u5411_u76F8_u5173_u7684_u4EE3_u7801_u9760_u8FD1"><a href="#u683C_u5F0F_uFF1A_u6A2A_u541180_7E120_uFF0C_u7F29_u8FDB_u4F53_u73B0_u5C42_u7EA7_uFF0C_u7EB5_u5411_u76F8_u5173_u7684_u4EE3_u7801_u9760_u8FD1" class="headerlink" title="格式：横向80~120，缩进体现层级，纵向相关的代码靠近"></a>格式：横向80~120，缩进体现层级，纵向相关的代码靠近</h2><ul>
+<li>空白行隔开不同概念的代码，而相关的代码可以靠近一些</li>
+<li>横向的字符不要找过80，最高不要超过120</li>
+<li>函数名和括号之间不要加空格，参数列表之间要加空格</li>
+<li>乘除等优先级高的符号不要加空格，加减等优先级低的加空格</li>
+<li>缩进：按照层级缩进</li>
+</ul>
+<h2 id="u5BF9_u8C61_uFF1A_u9690_u85CF_u6570_u636E_uFF0C_u66B4_u9732_u65B9_u6CD5"><a href="#u5BF9_u8C61_uFF1A_u9690_u85CF_u6570_u636E_uFF0C_u66B4_u9732_u65B9_u6CD5" class="headerlink" title="对象：隐藏数据，暴露方法"></a>对象：隐藏数据，暴露方法</h2><ul>
+<li>Demeter定律：模块不应该了解它所操作对象的内部情形</li>
+</ul>
+<h2 id="u9519_u8BEF_u5904_u7406_uFF1A_u9519_u8BEF_u5904_u7406_u5E94_u4E0D_u5F71_u54CD_u4EE3_u7801_u903B_u8F91_uFF0C_u907F_u514D_u8FD4_u56DE_u6216_u8005_u4F20_u9012null_u503C"><a href="#u9519_u8BEF_u5904_u7406_uFF1A_u9519_u8BEF_u5904_u7406_u5E94_u4E0D_u5F71_u54CD_u4EE3_u7801_u903B_u8F91_uFF0C_u907F_u514D_u8FD4_u56DE_u6216_u8005_u4F20_u9012null_u503C" class="headerlink" title="错误处理：错误处理应不影响代码逻辑，避免返回或者传递null值"></a>错误处理：错误处理应不影响代码逻辑，避免返回或者传递null值</h2><ul>
+<li>使用异常try-catch，可避免搞乱代码逻辑</li>
+<li>避免传递或者返回null值</li>
+</ul>
+<h1 id="u8C22_u8C22_u5927_u5BB6_uFF01"><a href="#u8C22_u8C22_u5927_u5BB6_uFF01" class="headerlink" title="谢谢大家！"></a>谢谢大家！</h1></span>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/12/08/sublime3非官方文档学习笔记/" rel="next" title="Sublime Text3非官方文档学习笔记">
+                <i class="fa fa-chevron-left"></i> Sublime Text3非官方文档学习笔记
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+        </div>
+
+        
+
+
+        
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2015/12/08/2015-12-08交流/"
+           data-title="2015-12-08交流" data-url="http://yoursite.com/2015/12/08/2015-12-08交流/">
+      </div>
+    
+  </div>
+
+
+      </div>
+
+      
+        
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" src="/images/author.jpg" alt="刘贵" itemprop="image"/>
+          <p class="site-author-name" itemprop="name">刘贵</p>
+        </div>
+        <p class="site-description motion-element" itemprop="description">博客，web前端，html，css，html5， css3，JavaScript，backbone，Nodejs，jQuery，OpenSeadragon</p>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            <a href="/categories">
+              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-name">分类</span>
+              </a>
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-name">标签</span>
+              </a>
+          </div>
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="http://github.com/liugui" target="_blank">
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/u/2839022630" target="_blank">
+                  
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+            <p class="site-author-name">友情链接</p>
+            
+              <span class="links-of-author-item">
+                <a href="http://tutuge.me/" target="_blank">全栈土哥</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://raytaylorlin.com/" target="_blank">大神寿寿</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://suta.name/" target="_blank">设计师苏塔</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://vanney9.com/" target="_blank">前后通吃的杰哥</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.syang.xyz/" target="_blank">有钱的赵老板</a>
+              </span>
+            
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Sublime_u90E8_u5206"><span class="nav-number">1.</span> <span class="nav-text">Sublime部分</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#u57FA_u672C_u4ECB_u7ECD"><span class="nav-number">1.1.</span> <span class="nav-text">基本介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u57FA_u672C_u6982_u5FF5"><span class="nav-number">1.2.</span> <span class="nav-text">基本概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u7F16_u8F91"><span class="nav-number">1.3.</span> <span class="nav-text">编辑</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u9009_u4E2D"><span class="nav-number">1.3.1.</span> <span class="nav-text">选中</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u9488_u5BF9_u591A_u884C_u7684_u9009_u4E2D"><span class="nav-number">1.3.1.1.</span> <span class="nav-text">针对多行的选中</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u9488_u5BF9_u591A_u5217_u7684_u9009_u4E2D"><span class="nav-number">1.3.1.2.</span> <span class="nav-text">针对多列的选中</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u9488_u5BF9_u5355_u8BCD_u7684_u9009_u4E2D"><span class="nav-number">1.3.1.3.</span> <span class="nav-text">针对单词的选中</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u5176_u4ED6_u7684_u952E_u76D8_u7F16_u8F91_u64CD_u4F5C"><span class="nav-number">1.3.2.</span> <span class="nav-text">其他的键盘编辑操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u56DE_u9000"><span class="nav-number">1.3.3.</span> <span class="nav-text">回退</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u641C_u7D22_u548C_u66FF_u6362"><span class="nav-number">1.4.</span> <span class="nav-text">搜索和替换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u6587_u4EF6_u5BFC_u822A_u548C_u6587_u4EF6_u7BA1_u7406"><span class="nav-number">1.5.</span> <span class="nav-text">文件导航和文件管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u641C_u7D22_u6587_u4EF6"><span class="nav-number">1.5.1.</span> <span class="nav-text">搜索文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u591A_u89C6_u56FE"><span class="nav-number">1.6.</span> <span class="nav-text">多视图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u9879_u76EE_u6587_u4EF6_u548C_u5DE5_u4F5C_u7A7A_u95F4"><span class="nav-number">1.7.</span> <span class="nav-text">项目文件和工作空间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u4E2A_u6027_u5316"><span class="nav-number">1.8.</span> <span class="nav-text">个性化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u81EA_u5B9A_u4E49_u5FEB_u6377_u952E"><span class="nav-number">1.9.</span> <span class="nav-text">自定义快捷键</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u6269_u5C55Sublime_Text_uFF1A_u81EA_u5B9A_u4E49_u5DF2_u6709"><span class="nav-number">1.10.</span> <span class="nav-text">扩展Sublime Text：自定义已有</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#u4EE3_u7801_u6574_u6D01_u4E4B_u9053"><span class="nav-number">2.</span> <span class="nav-text">代码整洁之道</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#u7B80_u4ECB"><span class="nav-number">2.1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u6807_u8BC6_u7B26_u547D_u540D_uFF1A_u6709_u610F_u4E49_uFF0C_u76F8_u4F3C_u6027_u4F4E_uFF0C_u907F_u514D_u524D_u7F00"><span class="nav-number">2.2.</span> <span class="nav-text">标识符命名：有意义，相似性低，避免前缀</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u51FD_u6570_uFF1A_u77ED_uFF0C_u53C2_u6570_u5C11_uFF0C_u6BCF_u4E2A_u51FD_u6570_u53EA_u505A_u4E00_u4EF6_u4E8B"><span class="nav-number">2.3.</span> <span class="nav-text">函数：短，参数少，每个函数只做一件事</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u6CE8_u91CA_uFF1A_u771F_u6B63_u7684_u597D_u4EE3_u7801_u4E0D_u9700_u8981_u592A_u591A_u6CE8_u91CA_uFF0C_u4F46_u4E0D_u80FD_u4E0D_u5199_u6CE8_u91CA"><span class="nav-number">2.4.</span> <span class="nav-text">注释：真正的好代码不需要太多注释，但不能不写注释</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u683C_u5F0F_uFF1A_u6A2A_u541180_7E120_uFF0C_u7F29_u8FDB_u4F53_u73B0_u5C42_u7EA7_uFF0C_u7EB5_u5411_u76F8_u5173_u7684_u4EE3_u7801_u9760_u8FD1"><span class="nav-number">2.5.</span> <span class="nav-text">格式：横向80~120，缩进体现层级，纵向相关的代码靠近</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u5BF9_u8C61_uFF1A_u9690_u85CF_u6570_u636E_uFF0C_u66B4_u9732_u65B9_u6CD5"><span class="nav-number">2.6.</span> <span class="nav-text">对象：隐藏数据，暴露方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u9519_u8BEF_u5904_u7406_uFF1A_u9519_u8BEF_u5904_u7406_u5E94_u4E0D_u5F71_u54CD_u4EE3_u7801_u903B_u8F91_uFF0C_u907F_u514D_u8FD4_u56DE_u6216_u8005_u4F20_u9012null_u503C"><span class="nav-number">2.7.</span> <span class="nav-text">错误处理：错误处理应不影响代码逻辑，避免返回或者传递null值</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#u8C22_u8C22_u5927_u5BB6_uFF01"><span class="nav-number">3.</span> <span class="nav-text">谢谢大家！</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+      
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2015</span>
+  <span class="with-love">
+    <i class="icon-next-heart fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">刘贵</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+
+  
+    
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"liugui"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+    
+     
+
+
+    
+  
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.2"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.2"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+<script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+<script type="text/javascript" src="/js/motion.js?v=0.4.5.2" id="motion.global"></script>
+
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.2" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    motionMiddleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+      if (CONFIG.sidebar === 'post') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  <script type="text/javascript" src="/js/bootstrap.js"></script>
+
+  
+  
+
+  
+  
+
+</body>
+</html>
