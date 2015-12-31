@@ -60,7 +60,7 @@
 <meta property="og:description" content="前两天重新给电脑装了个win10，之前存放在C盘的里面的hexo全部没有了，折腾了半天，终于恢复了hexo写博客的功能，现在记录下来，给需要的朋友备用。
 对于hexo来说，两个配置文件是最重要的，一个是hexo本身的配置文件，位于”你的hexo主目录/“下的”_config.yml”，另一个是主题的配置文件，位于”你的hexo主目录/themes/你的主题文件夹/_config.yml”，这两个文">
 <meta property="og:image" content="http://yoursite.com/images/ssh_key.png">
-<meta property="og:updated_time" content="2015-12-31T05:29:12.402Z">
+<meta property="og:updated_time" content="2015-12-31T05:32:22.851Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="重装系统后hexo写博客功能的恢复">
 <meta name="twitter:description" content="前两天重新给电脑装了个win10，之前存放在C盘的里面的hexo全部没有了，折腾了半天，终于恢复了hexo写博客的功能，现在记录下来，给需要的朋友备用。
@@ -294,7 +294,7 @@ Enter same passphrase again:&lt;再次输入加密串，回车&gt;
 </code></pre><p>此时命令行窗口会显示以下内容：</p>
 <p><img src="/images/ssh_key.png" alt="SSH-Key公钥生成截图"></p>
 <p>说明公钥已经生成。</p>
-<h3 id="u6DFB_u52A0_u516C_u94A5_u5230Github_uFF1A"><a href="#u6DFB_u52A0_u516C_u94A5_u5230Github_uFF1A" class="headerlink" title="添加公钥到Github："></a>添加公钥到Github：</h3><p>找到刚刚生成的公钥文件，文件名为id_rsa.pub。如果是自定义的公钥存放路径那是在该目录下，否则是默认的路径下。在我的win10系统中，默认路径是在’C:\Users\Adminstrator.ssh’目录下，如果在win7系统，应该在’C:\Documents and Settings\Administrator.ssh\’，如果实在找不到就按照文件名搜一下。找到这个文件，用文本编辑器打开。</p>
+<h3 id="u6DFB_u52A0_u516C_u94A5_u5230Github_uFF1A"><a href="#u6DFB_u52A0_u516C_u94A5_u5230Github_uFF1A" class="headerlink" title="添加公钥到Github："></a>添加公钥到Github：</h3><p>找到刚刚生成的公钥文件，文件名为id_rsa.pub。如果是自定义的公钥存放路径那是在该目录下，否则是默认的路径下。在我的win10系统中，默认路径是在’C:\Users\cattle.ssh’目录下，cattle是我的windows用户名，如果在win7系统，应该在’C:\Documents and Settings\Administrator.ssh\’，如果实在找不到，在上面公钥生成后的提示中也可以找到，如上面的截图中的第一句就是路径信息，如果你把窗口关了，好吧，按照文件名搜一下吧。找到这个文件，用文本编辑器打开。</p>
 <p>登录到Github，点击头像，在下拉菜单中选择Account Settings–&gt;SSH Public keys –&gt; add another public keys，会弹出一个文本框，title随意填写，然后复制文本编辑器中的内容，直接复制粘贴到Key中，点击Add key按钮即可。</p>
 <h3 id="u8BBE_u7F6E_u7528_u6237_u4FE1_u606F"><a href="#u8BBE_u7F6E_u7528_u6237_u4FE1_u606F" class="headerlink" title="设置用户信息"></a>设置用户信息</h3><p>用户信息被Github用来记录提交信息。执行以下命令：</p>
 <pre><code>$ git config --global user.name &quot;cnfeat&quot;//用户名
