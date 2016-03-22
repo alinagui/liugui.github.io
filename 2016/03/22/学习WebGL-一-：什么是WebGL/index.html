@@ -35,7 +35,7 @@
 <link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="hexo," />
+  <meta name="keywords" content="WebGL," />
 
 
 
@@ -51,20 +51,16 @@
 
 
 
-<meta name="description" content="前两天重新给电脑装了个win10，之前存放在C盘的里面的hexo全部没有了，折腾了半天，终于恢复了hexo写博客的功能，现在记录下来，给需要的朋友备用。
-对于hexo来说，两个配置文件是最重要的，一个是hexo本身的配置文件，位于”你的hexo主目录/“下的”_config.yml”，另一个是主题的配置文件，位于”你的hexo主目录/themes/你的主题文件夹/_config.yml”，这两个文">
+<meta name="description" content="最近看到实验室其他同学在学习OpenGL，看起来非常高大上。本着个人兴趣以及项目需求，也想学习一下WebGL。学习一段时间后，顿悟WebGL之强大！虽然在目前来说，WebGL的使用还不是特别广泛，但可以预见在将来必定有很大用途。于是想把自己的学习心得记录下来，希望有兴趣的朋友一起讨论。在学习WebGL之前，我没有任何计算机图形学的基础，所以为了理解某些内容查阅了很多资料，结合自己的理解，我都会在博">
 <meta property="og:type" content="article">
-<meta property="og:title" content="重装系统后hexo写博客功能的恢复">
-<meta property="og:url" content="http://yoursite.com/2015/12/31/重装系统后hexo写博客功能的恢复/index.html">
+<meta property="og:title" content="学习WebGL(一)：什么是WebGL">
+<meta property="og:url" content="http://yoursite.com/2016/03/22/学习WebGL-一-：什么是WebGL/index.html">
 <meta property="og:site_name" content="刘贵的博客">
-<meta property="og:description" content="前两天重新给电脑装了个win10，之前存放在C盘的里面的hexo全部没有了，折腾了半天，终于恢复了hexo写博客的功能，现在记录下来，给需要的朋友备用。
-对于hexo来说，两个配置文件是最重要的，一个是hexo本身的配置文件，位于”你的hexo主目录/“下的”_config.yml”，另一个是主题的配置文件，位于”你的hexo主目录/themes/你的主题文件夹/_config.yml”，这两个文">
-<meta property="og:image" content="http://yoursite.com/images/ssh_key.png">
-<meta property="og:updated_time" content="2015-12-31T05:32:22.851Z">
+<meta property="og:description" content="最近看到实验室其他同学在学习OpenGL，看起来非常高大上。本着个人兴趣以及项目需求，也想学习一下WebGL。学习一段时间后，顿悟WebGL之强大！虽然在目前来说，WebGL的使用还不是特别广泛，但可以预见在将来必定有很大用途。于是想把自己的学习心得记录下来，希望有兴趣的朋友一起讨论。在学习WebGL之前，我没有任何计算机图形学的基础，所以为了理解某些内容查阅了很多资料，结合自己的理解，我都会在博">
+<meta property="og:updated_time" content="2016-03-22T13:34:50.201Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="重装系统后hexo写博客功能的恢复">
-<meta name="twitter:description" content="前两天重新给电脑装了个win10，之前存放在C盘的里面的hexo全部没有了，折腾了半天，终于恢复了hexo写博客的功能，现在记录下来，给需要的朋友备用。
-对于hexo来说，两个配置文件是最重要的，一个是hexo本身的配置文件，位于”你的hexo主目录/“下的”_config.yml”，另一个是主题的配置文件，位于”你的hexo主目录/themes/你的主题文件夹/_config.yml”，这两个文">
+<meta name="twitter:title" content="学习WebGL(一)：什么是WebGL">
+<meta name="twitter:description" content="最近看到实验室其他同学在学习OpenGL，看起来非常高大上。本着个人兴趣以及项目需求，也想学习一下WebGL。学习一段时间后，顿悟WebGL之强大！虽然在目前来说，WebGL的使用还不是特别广泛，但可以预见在将来必定有很大用途。于是想把自己的学习心得记录下来，希望有兴趣的朋友一起讨论。在学习WebGL之前，我没有任何计算机图形学的基础，所以为了理解某些内容查阅了很多资料，结合自己的理解，我都会在博">
 
 
 
@@ -76,7 +72,7 @@
   };
 </script>
 
-  <title> 重装系统后hexo写博客功能的恢复 | 刘贵的博客 </title>
+  <title> 学习WebGL(一)：什么是WebGL | 刘贵的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -216,7 +212,7 @@
             
             
               
-                重装系统后hexo写博客功能的恢复
+                学习WebGL(一)：什么是WebGL
               
             
           </h1>
@@ -225,8 +221,8 @@
         <div class="post-meta">
           <span class="post-time">
             发表于
-            <time itemprop="dateCreated" datetime="2015-12-31T11:00:01+08:00" content="2015-12-31">
-              2015-12-31
+            <time itemprop="dateCreated" datetime="2016-03-22T19:52:31+08:00" content="2016-03-22">
+              2016-03-22
             </time>
           </span>
 
@@ -236,8 +232,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/12/31/重装系统后hexo写博客功能的恢复/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/31/重装系统后hexo写博客功能的恢复/" itemprop="commentsCount"></span>
+                <a href="/2016/03/22/学习WebGL-一-：什么是WebGL/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/22/学习WebGL-一-：什么是WebGL/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -256,58 +252,37 @@
       
 
       
-        <span itemprop="articleBody"><p>前两天重新给电脑装了个win10，之前存放在C盘的里面的hexo全部没有了，折腾了半天，终于恢复了hexo写博客的功能，现在记录下来，给需要的朋友备用。</p>
-<p>对于hexo来说，两个配置文件是最重要的，一个是hexo本身的配置文件，位于”你的hexo主目录/“下的”_config.yml”，另一个是主题的配置文件，位于”你的hexo主目录/themes/你的主题文件夹/_config.yml”，这两个文件一定要记得备份，如果没有了，那就只能重新配置了。另外就是source文件夹下的博客文章资源等，也应该做好备份。如果没有备份，那么恢复hexo的发博客功能也是没有关系的，但是配置上和博客文档上可能需要自己重新配置了。</p>
-<p>首先声明，以下所有的操作都假定你之前的hexo已经配置好，博客系统可以正常工作，只是因为重装系统或者其他操作失去了本地的hexo文件夹，现在要恢复hexo而已，并且以下都是基于windows系统的。</p>
-<h2 id="u5B89_u88C5git_u548Cnodejs"><a href="#u5B89_u88C5git_u548Cnodejs" class="headerlink" title="安装git和nodejs"></a>安装git和nodejs</h2><p>这两个软件是hexo可以正常工作的基础，必须要先安装好。安装后，要在cmd命令行执行<code>node -v</code>和<code>npm -v</code>检查是否安装成功。</p>
-<h2 id="u5B89_u88C5hexo"><a href="#u5B89_u88C5hexo" class="headerlink" title="安装hexo"></a>安装hexo</h2><p>如果git和npm都已经安装好了，那么现在可以直接安装hexo了，在命令行中执行以下命令：</p>
-<pre><code>npm install -g hexo-cli
-</code></pre><p>将hexo安装到全局。</p>
-<h2 id="u5EFA_u7ACBhexo_u6587_u4EF6_u5939"><a href="#u5EFA_u7ACBhexo_u6587_u4EF6_u5939" class="headerlink" title="建立hexo文件夹"></a>建立hexo文件夹</h2><p>在自己选定的某个目录下，新建一个文件夹，这个文件夹就是之前的hexo文件夹，可以命名为’hexo’。进入hexo文件夹，按住shift加鼠标右键，选择“在此处打开命令窗口”（或者直接通过cmd进入此文件夹也可），在打开的命令行窗口中执行：</p>
-<pre><code>hexo init
-</code></pre><p>此命令执行完成后，会在该文件夹下生成多个文件，这是hexo的基本文件，然后继续执行：</p>
-<pre><code>npm install
-</code></pre><p>安装hexo必须的依赖包。安装时可能会有一些warning的提示，但一般不会影响使用。可以进入node_modules文件夹查看安装的依赖包情况。至此hexo文件夹的基础部分就恢复了。</p>
-<p>如果备份了hexo的配置文件_config.yml，可以直接将文件复制过来覆盖，如果没有备份，那么就只能自己重新配置了。</p>
-<h2 id="u6062_u590D_u4E3B_u9898"><a href="#u6062_u590D_u4E3B_u9898" class="headerlink" title="恢复主题"></a>恢复主题</h2><p>先在网上搜索自己需要恢复的主题的github链接，进入hexo/themes文件夹，鼠标右键，选择”Git Bash Here”，打开git窗口，执行</p>
-<pre><code>git clone http://你找到的gitbub链接
-</code></pre><p>克隆完成后，进入该主题的文件夹。如果之前备份了主题的_config.yml文件，则直接复制过来覆盖。hexo的_config.yml文件和主题的_config.yml不是同一个文件，前面已经提过。如果没有备份，那么只能重新配置一遍。</p>
-<h2 id="u6D4B_u8BD5_u672C_u5730"><a href="#u6D4B_u8BD5_u672C_u5730" class="headerlink" title="测试本地"></a>测试本地</h2><p>至此，本地的配置已经完成了，可以先进行简单的本地测试。进入hexo文件夹，打开命令行窗口，或着打开Git的命令行窗口也可，执行：</p>
-<pre><code>hexo g
-</code></pre><p>此时可以看到hexo在执行生成页面文件，再执行</p>
-<pre><code>hexo s
-</code></pre><p>hexo启动本地服务，浏览器中输入’<a href="http://localhost:4000/&#39;，可以看到在本地的预览效果。至此，说明本地的配置已经完成。" target="_blank" rel="external">http://localhost:4000/&#39;，可以看到在本地的预览效果。至此，说明本地的配置已经完成。</a></p>
-<h2 id="u6062_u590D_u4E0Egithub_u7684_u94FE_u63A5"><a href="#u6062_u590D_u4E0Egithub_u7684_u94FE_u63A5" class="headerlink" title="恢复与github的链接"></a>恢复与github的链接</h2><p>恢复到github有以下几个步骤：</p>
-<h3 id="u914D_u7F6E_config-yml_u4E2D_u7684deploy"><a href="#u914D_u7F6E_config-yml_u4E2D_u7684deploy" class="headerlink" title="配置_config.yml中的deploy"></a>配置_config.yml中的deploy</h3><p>在hexo根目录下的_config.yml文件中，要配置deploy（如果是之前已经备份的则不需要改变，如果是重新写那么先要配置这个选项），格式为：</p>
-<pre><code>deploy:
-  type: git
-  repository: git@github.com:yourname/yourname.github.io.git
-  branch: master
-</code></pre><h3 id="u914D_u7F6E_u516C_u94A5"><a href="#u914D_u7F6E_u516C_u94A5" class="headerlink" title="配置公钥"></a>配置公钥</h3><p>一般来说，重装系统后并没有配置SSH Keys，所以还要配置SSH Key。在hexo文件夹中点击鼠标右键选择“Git Bash Here”打开命令行窗口，执行以下命令：</p>
-<pre><code>$ ssh-keygen -t rsa -C &quot;邮件地址@youremail.com&quot;
-</code></pre><p>此时会看到窗口显示以下信息</p>
-<pre><code>Generating public/private rsa key pair.
-Enter file in which to save the key (/Users/your_user_directory/.ssh/id_rsa):
-</code></pre><p>要求用户选择公钥的存放路径，可以手动定制，也可以直接回车放在默认的路径，后面要用到这个路径。然后，系统会要求用户输入密码：</p>
-<pre><code>Enter passphrase (empty for no passphrase):&lt;输入加密串，回车&gt;
-Enter same passphrase again:&lt;再次输入加密串，回车&gt;
-</code></pre><p>此时命令行窗口会显示以下内容：</p>
-<p><img src="/images/ssh_key.png" alt="SSH-Key公钥生成截图"></p>
-<p>说明公钥已经生成。</p>
-<h3 id="u6DFB_u52A0_u516C_u94A5_u5230Github_uFF1A"><a href="#u6DFB_u52A0_u516C_u94A5_u5230Github_uFF1A" class="headerlink" title="添加公钥到Github："></a>添加公钥到Github：</h3><p>找到刚刚生成的公钥文件，文件名为id_rsa.pub。如果是自定义的公钥存放路径那是在该目录下，否则是默认的路径下。在我的win10系统中，默认路径是在’C:\Users\cattle.ssh’目录下，cattle是我的windows用户名，如果在win7系统，应该在’C:\Documents and Settings\Administrator.ssh\’，如果实在找不到，在上面公钥生成后的提示中也可以找到，如上面的截图中的第一句就是路径信息，如果你把窗口关了，好吧，按照文件名搜一下吧。找到这个文件，用文本编辑器打开。</p>
-<p>登录到Github，点击头像，在下拉菜单中选择Account Settings–&gt;SSH Public keys –&gt; add another public keys，会弹出一个文本框，title随意填写，然后复制文本编辑器中的内容，直接复制粘贴到Key中，点击Add key按钮即可。</p>
-<h3 id="u8BBE_u7F6E_u7528_u6237_u4FE1_u606F"><a href="#u8BBE_u7F6E_u7528_u6237_u4FE1_u606F" class="headerlink" title="设置用户信息"></a>设置用户信息</h3><p>用户信息被Github用来记录提交信息。执行以下命令：</p>
-<pre><code>$ git config --global user.name &quot;cnfeat&quot;//用户名
-$ git config --global user.email  &quot;cnfeat@gmail.com&quot;//邮箱
-</code></pre><p>至此，已经完成了到Github的连接。</p>
-<h2 id="u6DFB_u52A0CNAME_u548CREADME_u6587_u4EF6"><a href="#u6DFB_u52A0CNAME_u548CREADME_u6587_u4EF6" class="headerlink" title="添加CNAME和README文件"></a>添加CNAME和README文件</h2><p>此时，如果直接执行<code>hexo g</code>和<code>hexo d</code>，按照提示输入密码，就可以部署了。但是在浏览器中输入域名打开时会提示404，原因是缺少CNAME文件。</p>
-<p>在hexo/source文件夹下，新建一个文本文件，里面的内容是域名，如’liugui.me’，然后保存，关闭，选中点击右键，属性，将文件名改成CNAME，去掉后缀，弹出的提示框直接选是。</p>
-<p>另外，一般还需要一个README文件，同样是新建文本，内容自己写，是描述自己的博客的，然后修改属性，去掉后缀。注意，千万不要把后缀改成md，这样会编译成一个HTML文件。</p>
-<p>重新执行以下命令：</p>
-<pre><code>hexo g
-hexo d
-</code></pre><p>然后，在浏览器中可以打开了。</p>
-<h2 id="u5C0F_u7ED3"><a href="#u5C0F_u7ED3" class="headerlink" title="小结"></a>小结</h2><p>至此，已经完成了全部操作。提醒大家平时要备份配置文件，这样以后恢复的时候就方便多了。</p>
+        <span itemprop="articleBody"><p>最近看到实验室其他同学在学习OpenGL，看起来非常高大上。本着个人兴趣以及项目需求，也想学习一下WebGL。学习一段时间后，顿悟WebGL之强大！虽然在目前来说，WebGL的使用还不是特别广泛，但可以预见在将来必定有很大用途。于是想把自己的学习心得记录下来，希望有兴趣的朋友一起讨论。在学习WebGL之前，我没有任何计算机图形学的基础，所以为了理解某些内容查阅了很多资料，结合自己的理解，我都会在博客中写出来，与大家共享，所以这套博文非常适合WebGL初学者一起学习讨论。这也是我自己写的第一套比较完整的学习博客，后面会持续更新。</p>
+<p>我学习的参考书：</p>
+<ol>
+<li>《WebGL高级编程–开发Web 3D图形》，[美]Andreas Anyuru 著，吴文国 译</li>
+<li>《WebGL编程指南》，[美]Kouichi Matsuda, Rodger Lea 著， 谢光磊 译</li>
+</ol>
+<h2 id="u4EC0_u4E48_u662FWebGL_uFF1F"><a href="#u4EC0_u4E48_u662FWebGL_uFF1F" class="headerlink" title="什么是WebGL？"></a>什么是WebGL？</h2><p>为了搞清楚这个问题，首先都是习惯性的去谷歌一下，然而看了维基百科和官网上的解释之后，感觉似懂非懂。书上的解释是：WebGL是一个用来在Web上生成三维图形效果的应用编程接口。分析这句话：首先WebGL是一个编程接口，即API，也就是说WebGL就是一套可以给我们调用的API，然后，WebGL的作用是在Web上生成三维图形效果的。看到这里好像明白了一点，后来还是自己找了个example去看一下代码，最后我的理解是：WebGL是<strong>支持WebGL功能</strong>的浏览器给我们提供的<strong>一套API</strong>，调用这些API可以驱动<strong>GPU</strong>帮我们在<strong>浏览器上</strong>绘制3D图形。我们常说CPU是电脑的大脑，那么GPU就是显卡的大脑。我们在买电脑时要看的一个重要参数就是显卡，我们都知道好的显卡能够呈现更好的画质，尤其是在玩游戏时。那么同样的，如果我们能够调用GPU帮我们在浏览器上绘图，那么3D效果肯定要好很多，这也就是我们使用WebGL的一个重要原因。为了让大家感受一下WebGL带来的好处，这里有一个<a href="http://labs.gooengine.com/pearl-boy/" target="_blank" rel="external">非常棒的例子</a>。这就是用WebGL实现的一个3D小游戏，如此酷炫的3D效果，就是在浏览器中实现的，是不是很棒？！</p>
+<p>而且，WebGL目前已经得到了大部分浏览器的支持。目前支持 WebGL 的浏览器：Firefox 4+, Google Chrome 9+, Opera 12+, Safari 5.1+ and Internet Explorer 11+; 然而, WebGL一些特性也需要用户设备支持。</p>
+<h2 id="u5982_u4F55_u4F7F_u7528API"><a href="#u5982_u4F55_u4F7F_u7528API" class="headerlink" title="如何使用API"></a>如何使用API</h2><p>上面提到，WebGL是支持WebGL功能的浏览器给我们提供的一套API，调用这些API可以驱动GPU帮我们在浏览器上绘制3D图形。那么要如何获取和使用这些API呢？要使用这套API，首先要创建一个<strong>WebGL绘图环境</strong>，创建这个绘图环境的结果是，我们会得到一个WebGLRenderingContext对象，在这个对象中包含了WebGL提供的一些属性和API，供我们使用。</p>
+<p>要在浏览器上绘制3D图形，就要使用到canvas标签，这也是创建WebGL绘图环境的一部分。它是一个html5标签，其语义就是一块画布，在这块画布上就可以进行绘制了。现在有很多html5小游戏，就是用到了这个标签。所以，在html代码部分，我们也需要一个canvas标签，然后通过canvas标签来获取WebGLRenderingContext。如下面的代码所示：<br>    <body onload="draw()"><br>        <canvas id="canvas" width="300" height="300">Your browser does not support the HTML5 canvas element.</canvas></body></p>
+<pre><code>    &lt;script type=&quot;text/javascript&quot;&gt;
+
+        var gl;
+
+        function draw() {
+            var canvas = document.getElementById(&quot;canvas&quot;);
+            gl = canvas.getContext(&quot;webgl&quot;) || canvas.getContext(&quot;experimental-webgl&quot;)
+        }
+    &lt;/script&gt;
+&lt;/body&gt;
+</code></pre><p>我们定义了一块宽高都是300px的canvas画布，canvas标签之间的语句是为了在不支持html5的浏览器中显示。在js代码中，我们用document.getElementById()方法获取这个标签，然后用canvas.getContext()方法获取WebGlRenderingContext对象，保存在一个全局变量gl中。然后，通过gl我们就可以调用WebGL的API了。比如，<code>gl.createShader()</code>方法就是WebGL提供的API之一。注意到这里我们传递给getContext()方法的参数有两个，两者其实是等价的。在WebGL标准定稿之前用的是”experimental-webgl”，定稿之后用的是”webgl”，为了浏览器的兼容性，最好两个都使用。用<code>||</code>符号的好处在于，如果第一个语句能够成功获取WebGLRenderingContext对象，就不必执行第二条语句。</p>
+<h2 id="WebGL_u4E0EOpenGL_uFF0COpenGL_ES_2-0"><a href="#WebGL_u4E0EOpenGL_uFF0COpenGL_ES_2-0" class="headerlink" title="WebGL与OpenGL，OpenGL ES 2.0"></a>WebGL与OpenGL，OpenGL ES 2.0</h2><p>在网上搜索WebGL时，可以看到OpenGL，OpenGL ES 2.0相关的内容。那么这几个之间到底是什么关系呢？相同之处在于，它们都是为了驱动GPU绘图而提供的一套API。现在我将它们各自的特点列举出来对比如下：</p>
+<ol>
+<li>OpenGL： 1992年发布第一个版本，跨平台在linux,Unix的几个版本，Mac OS X和Windows操作系统平台中使用，主要用于台式机。</li>
+<li>OpenGL ES2.0： 由桌面OpenGL的子集组成，适用于移动手机等嵌入式设备的，开放的3D图形标准。</li>
+<li>WebGL：2011年发布第一个版本，主要是在Web上使用。建立在OpenGL ES 2.0之上，所以非常类似，最大的不同之处在于WebGL运行在HTML和JavaScript上下文中，而OpenGL ES 2.0 通常用在C/C++、Objective C或Java上下文。</li>
+</ol>
+<p>可以看到，OpenGL是最早发布的，是鼻祖，主要适用于台式机，如台式机上的游戏开发。OpenGL ES是OpenGL的子集，而WebGL又基于OpenGL ES2.0而来。三者是相互继承发展的关系。主要区别在于其运行环境和适用范围的不同。</p>
+<p>顺便提一下，还有一项技术叫做DirectX，如Directx 11，这是微软多媒体和游戏编程API的名称，它也是可以用来做3D图形编程的，但是这项技术只能用于Windows操作系统，OpenGL与此相比最大的一个好处就是其跨平台性，即可以运行在多种操作系统中。</p>
+<h2 id="WebGL_u5982_u4F55_u9A71_u52A8GPU"><a href="#WebGL_u5982_u4F55_u9A71_u52A8GPU" class="headerlink" title="WebGL如何驱动GPU"></a>WebGL如何驱动GPU</h2><p>在WebGL中，除了使用JavaScript之外，我们还需要使用另一种GLSL ES语言，即OpenGL ES Shading Language，主要用来编写着色器（后面介绍）。这是一种类似于C风格的代码，它要经过编译和链接之后，在GPU上执行。而我们知道JavaScript是脚本语言，不需要经过编译和链接的。WebGL集成了多种GPU的编译器，可以确保GLSL ES编译后能在GPU上正确的执行。</p>
+<h2 id="u603B_u7ED3"><a href="#u603B_u7ED3" class="headerlink" title="总结"></a>总结</h2><p>这篇博客对WebGL的一般性概念做了介绍，并且与OpenGL、OpenGL ES等做了对比，希望对大家初步认识和理解WebGL有帮助。</p>
 </span>
       
     </div>
@@ -316,7 +291,7 @@ hexo d
       
         <div class="post-tags">
           
-            <a href="/tags/hexo/" rel="tag">#hexo</a>
+            <a href="/tags/WebGL/" rel="tag">#WebGL</a>
           
         </div>
       
@@ -325,17 +300,13 @@ hexo d
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/12/08/2015-12-08交流/" rel="next" title="2015-12-08交流">
-                <i class="fa fa-chevron-left"></i> 2015-12-08交流
+              <a href="/2015/12/31/重装系统后hexo写博客功能的恢复/" rel="next" title="重装系统后hexo写博客功能的恢复">
+                <i class="fa fa-chevron-left"></i> 重装系统后hexo写博客功能的恢复
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/03/22/学习WebGL-一-：什么是WebGL/" rel="prev" title="学习WebGL(一)：什么是WebGL">
-                学习WebGL(一)：什么是WebGL <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -362,8 +333,8 @@ hexo d
         
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2015/12/31/重装系统后hexo写博客功能的恢复/"
-           data-title="重装系统后hexo写博客功能的恢复" data-url="http://yoursite.com/2015/12/31/重装系统后hexo写博客功能的恢复/">
+      <div class="ds-thread" data-thread-key="2016/03/22/学习WebGL-一-：什么是WebGL/"
+           data-title="学习WebGL(一)：什么是WebGL" data-url="http://yoursite.com/2016/03/22/学习WebGL-一-：什么是WebGL/">
       </div>
     
   </div>
@@ -490,7 +461,7 @@ hexo d
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#u5B89_u88C5git_u548Cnodejs"><span class="nav-number">1.</span> <span class="nav-text">安装git和nodejs</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u5B89_u88C5hexo"><span class="nav-number">2.</span> <span class="nav-text">安装hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u5EFA_u7ACBhexo_u6587_u4EF6_u5939"><span class="nav-number">3.</span> <span class="nav-text">建立hexo文件夹</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u6062_u590D_u4E3B_u9898"><span class="nav-number">4.</span> <span class="nav-text">恢复主题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u6D4B_u8BD5_u672C_u5730"><span class="nav-number">5.</span> <span class="nav-text">测试本地</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u6062_u590D_u4E0Egithub_u7684_u94FE_u63A5"><span class="nav-number">6.</span> <span class="nav-text">恢复与github的链接</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u914D_u7F6E_config-yml_u4E2D_u7684deploy"><span class="nav-number">6.1.</span> <span class="nav-text">配置_config.yml中的deploy</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u914D_u7F6E_u516C_u94A5"><span class="nav-number">6.2.</span> <span class="nav-text">配置公钥</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u6DFB_u52A0_u516C_u94A5_u5230Github_uFF1A"><span class="nav-number">6.3.</span> <span class="nav-text">添加公钥到Github：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u8BBE_u7F6E_u7528_u6237_u4FE1_u606F"><span class="nav-number">6.4.</span> <span class="nav-text">设置用户信息</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u6DFB_u52A0CNAME_u548CREADME_u6587_u4EF6"><span class="nav-number">7.</span> <span class="nav-text">添加CNAME和README文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u5C0F_u7ED3"><span class="nav-number">8.</span> <span class="nav-text">小结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#u4EC0_u4E48_u662FWebGL_uFF1F"><span class="nav-number">1.</span> <span class="nav-text">什么是WebGL？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u5982_u4F55_u4F7F_u7528API"><span class="nav-number">2.</span> <span class="nav-text">如何使用API</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WebGL_u4E0EOpenGL_uFF0COpenGL_ES_2-0"><span class="nav-number">3.</span> <span class="nav-text">WebGL与OpenGL，OpenGL ES 2.0</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WebGL_u5982_u4F55_u9A71_u52A8GPU"><span class="nav-number">4.</span> <span class="nav-text">WebGL如何驱动GPU</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u603B_u7ED3"><span class="nav-number">5.</span> <span class="nav-text">总结</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
