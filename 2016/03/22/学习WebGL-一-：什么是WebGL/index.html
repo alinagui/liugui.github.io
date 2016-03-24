@@ -57,7 +57,7 @@
 <meta property="og:url" content="http://yoursite.com/2016/03/22/学习WebGL-一-：什么是WebGL/index.html">
 <meta property="og:site_name" content="刘贵的博客">
 <meta property="og:description" content="最近看到实验室其他同学在学习OpenGL，看起来非常高大上。本着个人兴趣以及项目需求，也想学习一下WebGL。学习一段时间后，顿悟WebGL之强大！虽然在目前来说，WebGL的使用还不是特别广泛，但可以预见在将来必定有很大用途。于是想把自己的学习心得记录下来，希望有兴趣的朋友一起讨论。在学习WebGL之前，我没有任何计算机图形学的基础，所以为了理解某些内容查阅了很多资料，结合自己的理解，我都会在博">
-<meta property="og:updated_time" content="2016-03-22T13:36:38.065Z">
+<meta property="og:updated_time" content="2016-03-23T12:35:24.823Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="学习WebGL(一)：什么是WebGL">
 <meta name="twitter:description" content="最近看到实验室其他同学在学习OpenGL，看起来非常高大上。本着个人兴趣以及项目需求，也想学习一下WebGL。学习一段时间后，顿悟WebGL之强大！虽然在目前来说，WebGL的使用还不是特别广泛，但可以预见在将来必定有很大用途。于是想把自己的学习心得记录下来，希望有兴趣的朋友一起讨论。在学习WebGL之前，我没有任何计算机图形学的基础，所以为了理解某些内容查阅了很多资料，结合自己的理解，我都会在博">
@@ -227,6 +227,21 @@
           </span>
 
           
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分类于
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/WebGL/" itemprop="url" rel="index">
+                    <span itemprop="name">WebGL</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
 
           
             
@@ -258,7 +273,7 @@
 <li>《WebGL高级编程–开发Web 3D图形》，[美]Andreas Anyuru 著，吴文国 译</li>
 <li>《WebGL编程指南》，[美]Kouichi Matsuda, Rodger Lea 著， 谢光磊 译</li>
 </ol>
-<h2 id="u4EC0_u4E48_u662FWebGL_uFF1F"><a href="#u4EC0_u4E48_u662FWebGL_uFF1F" class="headerlink" title="什么是WebGL？"></a>什么是WebGL？</h2><p>为了搞清楚这个问题，首先都是习惯性的去谷歌一下，然而看了维基百科和官网上的解释之后，感觉似懂非懂。书上的解释是：WebGL是一个用来在Web上生成三维图形效果的应用编程接口。分析这句话：首先WebGL是一个编程接口，即API，也就是说WebGL就是一套可以给我们调用的API，然后，WebGL的作用是在Web上生成三维图形效果的。看到这里好像明白了一点，后来还是自己找了个example去看一下代码，最后我的理解是：WebGL是<strong>支持WebGL功能</strong>的浏览器给我们提供的<strong>一套API</strong>，调用这些API可以驱动<strong>GPU</strong>帮我们在<strong>浏览器上</strong>绘制3D图形。我们常说CPU是电脑的大脑，那么GPU就是显卡的大脑。我们在买电脑时要看的一个重要参数就是显卡，我们都知道好的显卡能够呈现更好的画质，尤其是在玩游戏时。那么同样的，如果我们能够调用GPU帮我们在浏览器上绘图，那么3D效果肯定要好很多，这也就是我们使用WebGL的一个重要原因。为了让大家感受一下WebGL带来的好处，这里有一个<a href="http://labs.gooengine.com/pearl-boy/" target="_blank" rel="external">非常棒的例子</a>。这就是用WebGL实现的一个3D小游戏，如此酷炫的3D效果，就是在浏览器中实现的，是不是很棒？！</p>
+<h2 id="u4EC0_u4E48_u662FWebGL_uFF1F"><a href="#u4EC0_u4E48_u662FWebGL_uFF1F" class="headerlink" title="什么是WebGL？"></a>什么是WebGL？</h2><p>为了搞清楚这个问题，首先都是习惯性的去谷歌一下，然而看了维基百科和官网上的解释之后，感觉似懂非懂。书上的解释是：WebGL是一个用来在Web上生成三维图形效果的应用编程接口。分析这句话：首先WebGL是一个编程接口，即API，也就是说WebGL就是一套可以给我们调用的API，然后，WebGL的作用是在Web上生成三维图形效果的。看到这里好像明白了一点，后来还是自己找了个example去看一下代码，最后我的理解是：WebGL是<strong>支持WebGL功能</strong>的浏览器给我们提供的<strong>一套API</strong>，调用这些API可以<strong>驱动GPU</strong>帮我们在<strong>浏览器上</strong>绘制3D图形。我们常说CPU是电脑的大脑，那么GPU就是显卡的大脑。我们在买电脑时要看的一个重要参数就是显卡，我们都知道好的显卡能够呈现更好的画质，尤其是在玩游戏时。那么同样的，如果我们能够调用GPU帮我们在浏览器上绘图，那么3D效果肯定要好很多，这也就是我们使用WebGL的一个重要原因。为了让大家感受一下WebGL带来的好处，这里有一个<a href="http://labs.gooengine.com/pearl-boy/" target="_blank" rel="external">非常棒的例子</a>。这就是用WebGL实现的一个3D小游戏，如此酷炫的3D效果，就是在浏览器中实现的，是不是很棒？！</p>
 <p>而且，WebGL目前已经得到了大部分浏览器的支持。目前支持 WebGL 的浏览器：Firefox 4+, Google Chrome 9+, Opera 12+, Safari 5.1+ and Internet Explorer 11+; 然而, WebGL一些特性也需要用户设备支持。</p>
 <h2 id="u5982_u4F55_u4F7F_u7528API"><a href="#u5982_u4F55_u4F7F_u7528API" class="headerlink" title="如何使用API"></a>如何使用API</h2><p>上面提到，WebGL是支持WebGL功能的浏览器给我们提供的一套API，调用这些API可以驱动GPU帮我们在浏览器上绘制3D图形。那么要如何获取和使用这些API呢？要使用这套API，首先要创建一个<strong>WebGL绘图环境</strong>，创建这个绘图环境的结果是，我们会得到一个WebGLRenderingContext对象，在这个对象中包含了WebGL提供的一些属性和API，供我们使用。</p>
 <p>要在浏览器上绘制3D图形，就要使用到canvas标签，这也是创建WebGL绘图环境的一部分。它是一个html5标签，其语义就是一块画布，在这块画布上就可以进行绘制了。现在有很多html5小游戏，就是用到了这个标签。所以，在html代码部分，我们也需要一个canvas标签，然后通过canvas标签来获取WebGLRenderingContext。如下面的代码所示：</p>
@@ -310,6 +325,10 @@
           </div>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/03/23/学习WebGL-二-WebGL的基本原理/" rel="prev" title="学习WebGL(二): WebGL基础知识">
+                学习WebGL(二): WebGL基础知识 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -377,18 +396,18 @@
           <img class="site-author-image" src="/images/author.jpg" alt="刘贵" itemprop="image"/>
           <p class="site-author-name" itemprop="name">刘贵</p>
         </div>
-        <p class="site-description motion-element" itemprop="description">专注前端开发</p>
+        <p class="site-description motion-element" itemprop="description">专注web前端开发</p>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">6</span>
+              <span class="site-state-item-count">7</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             <a href="/categories">
-              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-count">4</span>
               <span class="site-state-item-name">分类</span>
               </a>
           </div>
