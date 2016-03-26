@@ -1,0 +1,944 @@
+<!doctype html>
+<html class="theme-next   use-motion ">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="WebGL," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=0.4.5.2" />
+
+
+
+
+
+
+<meta name="description" content="前面两篇博客都没有设计到代码，这篇博客介绍一个基本的WebGL程序，以此来分析WebGL程序的基本结构。
+WebGL程序的基本结构&amp;lt;!DOCTYPE HTML&amp;gt;
+&amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt;
+
+&amp;lt;head&amp;gt;
+&amp;lt;title&amp;gt;First WebGL Application&amp;lt;/title&amp;gt;
+&amp;lt;meta charse">
+<meta property="og:type" content="article">
+<meta property="og:title" content="学习WebGL(三)：创建基本WebGL程序">
+<meta property="og:url" content="http://yoursite.com/2016/03/26/学习WebGL-三-：创建基本WebGL程序/index.html">
+<meta property="og:site_name" content="刘贵的博客">
+<meta property="og:description" content="前面两篇博客都没有设计到代码，这篇博客介绍一个基本的WebGL程序，以此来分析WebGL程序的基本结构。
+WebGL程序的基本结构&amp;lt;!DOCTYPE HTML&amp;gt;
+&amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt;
+
+&amp;lt;head&amp;gt;
+&amp;lt;title&amp;gt;First WebGL Application&amp;lt;/title&amp;gt;
+&amp;lt;meta charse">
+<meta property="og:updated_time" content="2016-03-26T12:08:17.630Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="学习WebGL(三)：创建基本WebGL程序">
+<meta name="twitter:description" content="前面两篇博客都没有设计到代码，这篇博客介绍一个基本的WebGL程序，以此来分析WebGL程序的基本结构。
+WebGL程序的基本结构&amp;lt;!DOCTYPE HTML&amp;gt;
+&amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt;
+
+&amp;lt;head&amp;gt;
+&amp;lt;title&amp;gt;First WebGL Application&amp;lt;/title&amp;gt;
+&amp;lt;meta charse">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: 'post',
+    motion: true
+  };
+</script>
+
+  <title> 学习WebGL(三)：创建基本WebGL程序 | 刘贵的博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  <!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+  
+
+
+
+
+
+
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">刘贵的博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">专注web前端开发</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content">
+          
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                学习WebGL(三)：创建基本WebGL程序
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2016-03-26T20:07:48+08:00" content="2016-03-26">
+              2016-03-26
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分类于
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/WebGL/" itemprop="url" rel="index">
+                    <span itemprop="name">WebGL</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/03/26/学习WebGL-三-：创建基本WebGL程序/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/26/学习WebGL-三-：创建基本WebGL程序/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <span itemprop="articleBody"><p>前面两篇博客都没有设计到代码，这篇博客介绍一个基本的WebGL程序，以此来分析WebGL程序的基本结构。</p>
+<h2 id="WebGL_u7A0B_u5E8F_u7684_u57FA_u672C_u7ED3_u6784"><a href="#WebGL_u7A0B_u5E8F_u7684_u57FA_u672C_u7ED3_u6784" class="headerlink" title="WebGL程序的基本结构"></a>WebGL程序的基本结构</h2><pre><code>&lt;!DOCTYPE HTML&gt;
+&lt;html lang=&quot;en&quot;&gt;
+
+&lt;head&gt;
+&lt;title&gt;First WebGL Application&lt;/title&gt;
+&lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;script id=&quot;shader-vs&quot; type=&quot;x-shader/x-vertex&quot;&gt;
+    // 顶点着色器的源码
+&lt;/script&gt;
+&lt;script id=&quot;shader-fs&quot; type=&quot;x-shader/x-fragment&quot;&gt;
+    //片段着色器的源码
+&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+// 定义一些全局变量
+var gl, canvas, shaderProgram, vertexBuffer;
+
+function createGLContext(canvas) {
+  // 创建WebGL环境
+}
+function loadShaderFromDOM(id) {
+    // 创建Shader，引入源码，并且编译链接
+}
+function setupShaders() {
+    // 创建Program，链接Shader
+}
+function setupBuffers() {
+    //设置WebGL缓存对象 
+}
+function draw() {
+   // 绘画的主函数
+}
+// startup函数，负责整个流程
+function startup() {
+    canvas = document.getElementById(&quot;myGLCanvas&quot;);
+    gl = WebGLDebugUtils.makeDebugContext(createGLContext(canvas));
+    setupShaders();
+    setupBuffers();
+    gl.clearColor(0.0, 0.0, 0.0, 1.0);// 定义初始化画布的颜色，即背景色
+    draw();
+}
+&lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body onload=&quot;startup();&quot;&gt;
+&lt;canvas id=&quot;myGLCanvas&quot; width=&quot;500&quot; height=&quot;500&quot;&gt;&lt;/canvas&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><h2 id="u4EE3_u7801_u5B9E_u73B0"><a href="#u4EE3_u7801_u5B9E_u73B0" class="headerlink" title="代码实现"></a>代码实现</h2><h3 id="u521B_u5EFAWebGL_u73AF_u5883"><a href="#u521B_u5EFAWebGL_u73AF_u5883" class="headerlink" title="创建WebGL环境"></a>创建WebGL环境</h3><p>要使用WebGL提供的API，首先要创建WebGL环境，获取WebGLRenderingContext对象。所以，在HTML代码部分，需要有一个<code>&lt;canvas&gt;</code>标签。获取这个标签后，使用getContext方法获取WebGLRenderingContext对象并且保存在全局变量gl中，然后就可以通过gl来调用WebGL的API和内置变量了。</p>
+<pre><code>function createGLContext(canvas) {
+    var names = [&quot;webgl&quot;, &quot;experimental-webgl&quot;]，
+        context = null;
+    for (var i = 0; i &lt; names.length; i++) {
+        try {
+            context = canvas.getContext(names[i]);
+        } catch (e) {}
+        if (context) {
+            break;
+        }
+    }
+    if (context) { // 设置WebGL会话窗口的大小与Canvas画布的大小一致 
+        context.viewportWidth = canvas.width;
+        context.viewportHeight = canvas.height;
+    } else {
+        alert(&quot;Failed to create WebGL context!&quot;);
+    }
+    return context;
+}
+</code></pre><p>在WebGL标准定稿前，使用getContext()函数输入的参数是”experimental-webgl”，在WebGL标准正式定稿之后，变成了”webgl”，为了考虑新旧浏览器的兼容性，最好将这两个参数都写出来，然后使用一个try-catch语句，只要有一个输入参数获取WebGLRenderingContext对象成功了，就使用break语句跳出。获取环境对象后，访问环境对象的viewportWidth和viewportHeight属性，这两个属性分别表示WebGL最终绘画的视口（viewport）的宽度和高度，设成与canvas画布的逻辑大小一致。如果设置的宽高比与canvas的宽高比不同，则显示的时候看起来会扭曲，如果设置的大小超过了画布的大小，那么会有一部分在画布之外而无法显示。视口的大小可以理解成，我们最终绘画时用到的画布上区域大小。最后，将这个WebGLRenderingContext对象返回给调用函数。</p>
+<h3 id="u7F16_u5199Shader_u6E90_u7801"><a href="#u7F16_u5199Shader_u6E90_u7801" class="headerlink" title="编写Shader源码"></a>编写Shader源码</h3><p>我们统一将Shader的源码放在<code>&lt;script&gt;</code>标签里面引入，也有另一种用字符串的形式直接将shader源码写在JavaScript代码中的方法，但是第一种方法使用更多一些，而且当Shader的代码较复杂时也方便很多。</p>
+<pre><code>// 顶点着色器(vertex shader)的源码
+&lt;script id=&quot;shader-vs&quot; type=&quot;x-shader/x-vertex&quot;&gt;
+    attribute vec3 aVertexPosition; 
+    void main() { 
+    gl_Position = vec4(aVertexPosition, 1.0);
+    }
+&lt;/script&gt;
+// 片段着色器(fragment shader)的源码
+&lt;script id=&quot;shader-fs&quot; type=&quot;x-shader/x-fragment&quot;&gt;
+    precision mediump float; 
+    void main() { 
+    gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0); 
+    }
+&lt;/script&gt;
+</code></pre><p><code>&lt;script&gt;</code>标签里面本来是用来存放JavaScript代码的，一般type值设为”text/javascript”，这也是type的默认值，它告诉浏览器这里面存储的是JavaScript代码，于是浏览器便读取执行。当type设置成了其他值时，浏览器就不会执行<code>&lt;script&gt;</code>标签里面的代码。所以，我们就可以将用GLSL ES编写的Shader的源码放在<code>&lt;script&gt;</code>标签中。WebGL中的两种着色器都有自己的结构特点、输入和输出值，分别比较如下：</p>
+<h4 id="u9876_u70B9_u7740_u8272_u5668"><a href="#u9876_u70B9_u7740_u8272_u5668" class="headerlink" title="顶点着色器"></a>顶点着色器</h4><p>顶点着色器的输入包括：</p>
+<ol>
+<li>vertex shader的实际源代码： 用GLSL ES设计的。因为是可编程的，所以可以输入代码</li>
+<li>attribute变量： 用户自定义的变量，包含<strong>特定于每个顶点</strong>的数据</li>
+<li>uniform变量： 用户自定义的变量，用来表示<strong>所有顶点</strong>都相同的数据，在一次绘制调用期间保持不变</li>
+</ol>
+<p>顶点着色器的输出包括：</p>
+<ol>
+<li>内置特殊变量： 以gl_开头，如gl_Position,gl_FrontFacing</li>
+<li>varying变量： 从vertex shader发送到fragment shader</li>
+</ol>
+<p>在本例的vertex shader源码中，输入只有一个attribute变量aVertextPostion，表示输入的顶点数据，vec3表示它的数据是一个三维向量，即一个顶点的三维坐标。类似的，vec4表示四维向量，mat4表示四维矩阵，mat3表示三维矩阵。这些是GLSL ES语言中规定的数据类型。前面介绍WebGL数据时提到，向量和矩阵是WebGL中经常用到的数据类型。vec3限定了变量的<strong>数据类型</strong>，attribute是变量<strong>存储限定符</strong>。在变量的命名中有以下约定:</p>
+<ol>
+<li>attribute变量命名以”a”开头，如<code>attribute vec3 aVertexPosition</code></li>
+<li>uniform变量命名以”u”开头，如<code>uniform mat4 uMVMatrix</code></li>
+<li>varying变量命名以”v”开头，如<code>varying vec4 vColor</code></li>
+<li>WebGL内置变量都是以”gl_”开头的，如<code>gl_Position</code></li>
+</ol>
+<p>其中，attribute类型的变量是普通的变量，在Shader中可以修改attribute变量的值，Shader执行时，它的值针对每个顶点可以是不同的。而uniform变量在Shader中是不可以修改的，只能读取，在一次绘制调用期间它对每个顶点的值都是相同的。varying表示定义一个可变变量，即这个变量的值是可以改变的，主要用来做颜色的自动插值计算。比如，要绘制一条线，定义线的左端顶点为红色，右端顶点为绿色，只要将这两个顶点颜色值传递给vertex shader，然后vertex shader通过一个varying变量将颜色值传递给fragment color，那么fragment shader可以自动的计算这条线段其他点的颜色，使其平稳的从红色变成绿色。</p>
+<h4 id="u7247_u6BB5_u7740_u8272_u5668"><a href="#u7247_u6BB5_u7740_u8272_u5668" class="headerlink" title="片段着色器"></a>片段着色器</h4><p>片段着色器的输入包括：</p>
+<ol>
+<li>shader源代码</li>
+<li>内置特殊变量</li>
+<li>用户自定义的varying变量</li>
+<li>uniform变量：对于所有片段都是恒量</li>
+<li>采样器(sampler): 特殊的uniform变量，用于纹理映射</li>
+</ol>
+<p>片段着色器的输出包括：</p>
+<ol>
+<li>内置特殊变量： gl_FragColor，表示片段的颜色。</li>
+</ol>
+<p>片段着色器最主要的作用就是根据vertex shader的处理结果，计算各个片段的颜色，输入到内置变量gl_FragColor。WebGL中的颜色用一个vec4类型表示，即一个四维向量，每个分量分别对应R,G,B,A,但是需要注意的是，每个分量的值都在[0,1]之间，它们对应[0,255]这种整数值的颜色表示，最后一位的透明度也是在0和1之间。</p>
+<p>在这个例子中，第一句<code>precision mediump float;</code>用来定义一个<strong>精度限定符</strong>，通过这个精度限定符，着色器编译器就可以知道着色器的变量或者数据类型的最小精度。在WebGL中，所有片段着色器中都必须定义浮点类型数据的精度，这里采用的<code>mediump</code>表示中等精度。</p>
+<h3 id="u521B_u5EFAshader"><a href="#u521B_u5EFAshader" class="headerlink" title="创建shader"></a>创建shader</h3><p>现在已经将shader的源代码写好并且放在了<code>&lt;script&gt;</code>标签中，接下来就要利用这些源代码创建Shader程序。</p>
+<pre><code>function loadShaderFromDOM(id) {
+    var shaderScript = document.getElementById(id);
+
+    if (!shaderScript) {// 如果没有找到DOM则返回null
+        return null;
+    }
+
+    var shaderSource = &quot;&quot;;
+    var currentChild = shaderScript.firstChild;
+    while (currentChild) {
+        if (currentChild.nodeType == 3) { // 3代表文本节点
+            shaderSource += currentChild.textContent;
+        }
+        currentChild = currentChild.nextSibling;
+    }
+
+    var shader;
+    if (shaderScript.type == &quot;x-shader/x-fragment&quot;) {
+        shader = gl.createShader(gl.FRAGMENT_SHADER);// 创建新的vertex shader
+    } else if (shaderScript.type == &quot;x-shader/x-vertex&quot;) {
+        shader = gl.createShader(gl.VERTEX_SHADER);// 创建新的fragment shader
+    } else {
+        return null;
+    }
+
+    gl.shaderSource(shader, shaderSource);// 将Shader源码放到Shader对象
+    gl.compileShader(shader);// 编译Shader
+
+    if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
+        alert(gl.getShaderInfoLog(shader));
+        return null;
+    }
+    return shader;
+}
+</code></pre><p>这个函数的作用是：接收容纳Shader源码的<code>&lt;script&gt;</code>标签的id，读取Shader源码创建一个Shader对象，编译后返回。一次执行创建一个Shader，一共可以创建两种类型的Shader。</p>
+<p>首先通过id找到这个DOM对象，然后用一个while循环来遍历这个对象的子节点，如果子节点的nodeType属性为3，那么表示这个子节点的类型的为文本节点，即该子节点表示文本。然后读取该子节点的内容（在本例中其实就只有一个子节点），以字符串的形式保存在shaderSource变量中。之前提到的另一种编写Shader源码的方法，就是直接在JavaScript代码中以字符串形式编写Shader源码，两者最后得到的结果都是相同的。</p>
+<p>到目前为止只是得到了Shader源码的字符串，字符串还不是一个Shader对象。根据在<code>&lt;script&gt;</code>标签中定义的type类型，判断要创建何种类型的Shader对象。创建Shader对象用到WebGL提供的API： <code>gl.createShader()</code>，这个函数接收一个参数：gl.VERTEX_SHADER表示创建顶点着色器，gl.FRAGMENT_SHADER表示创建片段着色器，创建的Shader对象作为返回值保存在shader变量中。</p>
+<p>现在得到了新建的空Shader对象，和Shader的源码，调用gl.shaderSource()函数，将源码引入到新建的空Shader对象中，就根据我们编写的Shader源码创建了一个Shader。创建的Shader调用gl.compileShader进行编译，以便能在GPU上执行。因为Shader是用GLSL编写的，而不是JavaScript这种不需要编译的脚本语言。</p>
+<p>最后的if语句是为了检查编译是否成功，gl.getShaderParameter访问gl.COMPILE_STATUS的值，如果是true则表示编译成功，否则编译失败。</p>
+<h3 id="u5C06Shader_u94FE_u63A5_u6210_u7A0B_u5E8F"><a href="#u5C06Shader_u94FE_u63A5_u6210_u7A0B_u5E8F" class="headerlink" title="将Shader链接成程序"></a>将Shader链接成程序</h3><p>上面已经创建了Shader并且编译，但是Shader还需要经过链接以后才能执行。</p>
+<pre><code>function setupShaders() {
+    vertexShader = loadShaderFromDOM(&quot;shader-vs&quot;);
+    fragmentShader = loadShaderFromDOM(&quot;shader-fs&quot;);
+
+    shaderProgram = gl.createProgram();// 创建一个新的空程序
+    gl.attachShader(shaderProgram, vertexShader);
+    gl.attachShader(shaderProgram, fragmentShader);// 将两个Shader放到程序中
+    gl.linkProgram(shaderProgram);// 将程序中的所有Shader链接
+
+    if (!gl.getProgramParameter(shaderProgram, gl.LINK_STATUS)) {
+        alert(&quot;Failed to setup shaders&quot;);
+    }
+    gl.useProgram(shaderProgram);// 指示WebGL使用这个程序
+
+    shaderProgram.vertexPositionAttribute = gl.getAttribLocation(shaderProgram, &quot;aVertexPosition&quot;);
+}
+</code></pre><p>首先两次调用上一小结介绍的loadShaderFromDOM()函数得到两个编译好的Shader，然后调用gl.createProgram()创建一个程序，通过gl.attachShader()方法把编译好的Shader放到新建的程序里面，然后调用gl.linkProgram将所有的Shader链接成一个程序。与检查编译状态类似，gl.getProgramParameter()函数访问gl.LINK_STATUS来检查链接是否完成。到此为止，Shader的编译和链接都已经完成了，通过gl.useProgram()指定WebGL引擎要使用这个程序绘图。最后的gl.getAttribLocation()方法用来获取通用属性索引，将在下一篇博客中详细介绍。</p>
+<h3 id="u521B_u5EFABuffer"><a href="#u521B_u5EFABuffer" class="headerlink" title="创建Buffer"></a>创建Buffer</h3><p>WebGL创建的Buffer是内存上的一块区域，它由WebGL来管理。 用户的数据都要先发送到Buffer里面，然后WebGL从Buffer中读取。</p>
+<pre><code>function setupBuffers() {
+    vertexBuffer = gl.createBuffer();
+    gl.bindBuffer(gl.ARRAY_BUFFER, vertexBuffer);
+    var triangleVertices = [
+        0.0, 0.5, 0.0, 
+       -0.5, -0.5, 0.0,
+        0.5, -0.5, 0.0
+    ];
+    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(triangleVertices), gl.STATIC_DRAW);
+    vertexBuffer.itemSize = 3;
+    vertexBuffer.numberOfItems = 3;
+}
+</code></pre><p>gl.createBuffer()用来创建一个buffer。WebGL可以创建很多个buffer，每个buffer用来专门存放一类数据。gl.bindBuffer将新建的Buffer与Shader的中的一个<strong>目标</strong>绑定，即告诉Shader要从这个Buffer中获取什么数据。然后定义顶点数据，本例要绘制一个三角形，所以只用传入三个顶点数据。gl.bufferData()将定义的数据上传到缓存中，由于缓存已经绑定了目标，所以第一个参数直接写成目标。后面的itemSize和numberOfItems属性分别表每个顶点包含的坐标数据个数（一个顶点有三个坐标），以及顶点本身的个数（三角形有三个顶点），加到buffer对象上以便后面调用。</p>
+<h3 id="u7ED8_u753B_u7684_u4E3B_u51FD_u6570"><a href="#u7ED8_u753B_u7684_u4E3B_u51FD_u6570" class="headerlink" title="绘画的主函数"></a>绘画的主函数</h3><p>到目前为止，已经准备好了绘画用到的WebGL程序和数据，终于可以开始绘画了。</p>
+<pre><code>function draw() {
+    gl.viewport(0, 0, gl.viewportWidth, gl.viewportHeight);// 设置窗口大小
+    gl.clear(gl.COLOR_BUFFER_BIT);// 重置窗口颜色
+    // 下面这两个函数指定数据的导入格式
+    gl.vertexAttribPointer(shaderProgram.vertexPositionAttribute,
+        vertexBuffer.itemSize, gl.FLOAT, false, 0, 0);
+    gl.enableVertexAttribArray(shaderProgram.vertexPositionAttribute);
+
+    gl.drawArrays(gl.TRIANGLES, 0, vertexBuffer.numberOfItems);// 开始绘画
+}
+</code></pre><p>gl.viewport定义绘画视口的大小和位置。绘画视口是一个矩形区域，前两个参数定义了视口矩形的左下角顶点，相对于canvas画布的左下角顶点而言的位置，后两个参数定义了矩形的宽高，以像素为单位。gl.clear()把颜色缓存清除为在下面的startup()函数用gl.clearColor()函数定义的颜色，这样做相当于描绘背景色，因为后面只会画我们定义的三角形以及给三角形填充颜色。gl.vertexAttribPointer()用来指定Buffer中数据的引用方法，gl.enableVertexAttribArray()用来激活通用属性索引，最后一个函数是绘画命令。这几个函数的具体用法将在后面的博客中介绍。</p>
+<p>最后，调用startup()函数依次调用即可。</p>
+<h2 id="WebGL_u7A0B_u5E8F_u7684_u4E00_u822C_u6B65_u9AA4"><a href="#WebGL_u7A0B_u5E8F_u7684_u4E00_u822C_u6B65_u9AA4" class="headerlink" title="WebGL程序的一般步骤"></a>WebGL程序的一般步骤</h2><p>最后，我们总结WebGL程序的一般步骤：</p>
+<ol>
+<li>在HTML代码中加入一个<canvas>标签，在JavaScript代码中引用这个<canvas>标签，创建一个WebGLRenderingContext对象，这个对象包含了所有的WebGL API,一般命名为gl，即<code>gl.function()</code>的方法；</canvas></canvas></li>
+<li>用GLSL ES编写vertex shader和fragment shader的源代码；</li>
+<li>用WebGL的API，创建shader对象，然后引入vertex shader和fragment shader的源代码并且编译；</li>
+<li>用WebGL的API，创建一个程序，程序中引入编译好的shader object，然后链接这个程序，再指示WebGL如何使用这个程序对象进行绘制；</li>
+<li>设置WebGL缓存对象，并把几何对象的顶点数据载入到顶点缓存；</li>
+<li>指示WebGL，哪个缓存对应于着色器的属性，最后绘制几何对象。</li>
+</ol>
+<h2 id="u603B_u7ED3"><a href="#u603B_u7ED3" class="headerlink" title="总结"></a>总结</h2><p>这篇博客很长，介绍了WebGL程序的一般结构。可以发现，有很多代码都是为了错误处理以及提高兼容性，所以使整个程序长了很多。这里介绍的有些函数在其他高级的WebGL程序中都是通用的，如createGLContext, loadShaderFromDOM等，更复杂的功能也是在这个程序的代码上增加一些函数，或者对这里的函数做修改实现的。总之，这篇博客介绍的程序结构，是开发WebGL程序的基本框架。</p>
+</span>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/WebGL/" rel="tag">#WebGL</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/03/24/学习WebGL-二-WebGL的基本原理/" rel="next" title="学习WebGL(二): WebGL基础知识">
+                <i class="fa fa-chevron-left"></i> 学习WebGL(二): WebGL基础知识
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+        </div>
+
+        
+
+
+        
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/03/26/学习WebGL-三-：创建基本WebGL程序/"
+           data-title="学习WebGL(三)：创建基本WebGL程序" data-url="http://yoursite.com/2016/03/26/学习WebGL-三-：创建基本WebGL程序/">
+      </div>
+    
+  </div>
+
+
+      </div>
+
+      
+        
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" src="/images/author.jpg" alt="刘贵" itemprop="image"/>
+          <p class="site-author-name" itemprop="name">刘贵</p>
+        </div>
+        <p class="site-description motion-element" itemprop="description">专注web前端开发</p>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">8</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            <a href="/categories">
+              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-name">分类</span>
+              </a>
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">5</span>
+              <span class="site-state-item-name">标签</span>
+              </a>
+          </div>
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="http://github.com/liugui" target="_blank">
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/u/2839022630" target="_blank">
+                  
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+            <p class="site-author-name">友情链接</p>
+            
+              <span class="links-of-author-item">
+                <a href="http://tutuge.me/" target="_blank">全栈土哥</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://raytaylorlin.com/" target="_blank">大神寿寿</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://suta.name/" target="_blank">设计师苏塔</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://vanney9.com/" target="_blank">前后通吃的杰哥</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.syang.xyz/" target="_blank">有钱的赵老板</a>
+              </span>
+            
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#WebGL_u7A0B_u5E8F_u7684_u57FA_u672C_u7ED3_u6784"><span class="nav-number">1.</span> <span class="nav-text">WebGL程序的基本结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u4EE3_u7801_u5B9E_u73B0"><span class="nav-number">2.</span> <span class="nav-text">代码实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u521B_u5EFAWebGL_u73AF_u5883"><span class="nav-number">2.1.</span> <span class="nav-text">创建WebGL环境</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u7F16_u5199Shader_u6E90_u7801"><span class="nav-number">2.2.</span> <span class="nav-text">编写Shader源码</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u9876_u70B9_u7740_u8272_u5668"><span class="nav-number">2.2.1.</span> <span class="nav-text">顶点着色器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u7247_u6BB5_u7740_u8272_u5668"><span class="nav-number">2.2.2.</span> <span class="nav-text">片段着色器</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u521B_u5EFAshader"><span class="nav-number">2.3.</span> <span class="nav-text">创建shader</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u5C06Shader_u94FE_u63A5_u6210_u7A0B_u5E8F"><span class="nav-number">2.4.</span> <span class="nav-text">将Shader链接成程序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u521B_u5EFABuffer"><span class="nav-number">2.5.</span> <span class="nav-text">创建Buffer</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u7ED8_u753B_u7684_u4E3B_u51FD_u6570"><span class="nav-number">2.6.</span> <span class="nav-text">绘画的主函数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WebGL_u7A0B_u5E8F_u7684_u4E00_u822C_u6B65_u9AA4"><span class="nav-number">3.</span> <span class="nav-text">WebGL程序的一般步骤</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u603B_u7ED3"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+      
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="icon-next-heart fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">刘贵</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+
+  
+    
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"liugui"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+    
+     
+
+
+    
+  
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.2"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.2"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+<script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+<script type="text/javascript" src="/js/motion.js?v=0.4.5.2" id="motion.global"></script>
+
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.2" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    motionMiddleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+      if (CONFIG.sidebar === 'post') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  <script type="text/javascript" src="/js/bootstrap.js"></script>
+
+  
+  
+
+  
+  
+
+</body>
+</html>
