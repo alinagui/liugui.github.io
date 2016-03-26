@@ -51,34 +51,19 @@
 
 
 
-<meta name="description" content="前面两篇博客都没有设计到代码，这篇博客介绍一个基本的WebGL程序，以此来分析WebGL程序的基本结构。
-WebGL程序的基本结构&amp;lt;!DOCTYPE HTML&amp;gt;
-&amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt;
-
-&amp;lt;head&amp;gt;
-&amp;lt;title&amp;gt;First WebGL Application&amp;lt;/title&amp;gt;
-&amp;lt;meta charse">
+<meta name="description" content="前面两篇博客都没有涉及到代码，这篇博客介绍一个基本的WebGL程序，以此来分析WebGL程序的基本结构。
+WebGL程序的基本结构1&amp;#10;&amp;#60;!DOCTYPE HTML&amp;#62;&amp;#10;&amp;#60;html lang=&amp;#34;en&amp;#34;&amp;#62;&amp;#10;&amp;#60;head&amp;#62;&amp;#10;    &amp;#60;title&amp;#62;First WebGL Application&amp;#6">
 <meta property="og:type" content="article">
-<meta property="og:title" content="学习WebGL(三)：创建基本WebGL程序">
-<meta property="og:url" content="http://yoursite.com/2016/03/26/学习WebGL-三-：创建基本WebGL程序/index.html">
+<meta property="og:title" content="学习WebGL(三)：创建基本的WebGL程序">
+<meta property="og:url" content="http://yoursite.com/2016/03/26/学习WebGL-三-：创建基本WebGL的程序/index.html">
 <meta property="og:site_name" content="刘贵的博客">
-<meta property="og:description" content="前面两篇博客都没有设计到代码，这篇博客介绍一个基本的WebGL程序，以此来分析WebGL程序的基本结构。
-WebGL程序的基本结构&amp;lt;!DOCTYPE HTML&amp;gt;
-&amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt;
-
-&amp;lt;head&amp;gt;
-&amp;lt;title&amp;gt;First WebGL Application&amp;lt;/title&amp;gt;
-&amp;lt;meta charse">
-<meta property="og:updated_time" content="2016-03-26T12:08:17.630Z">
+<meta property="og:description" content="前面两篇博客都没有涉及到代码，这篇博客介绍一个基本的WebGL程序，以此来分析WebGL程序的基本结构。
+WebGL程序的基本结构1&amp;#10;&amp;#60;!DOCTYPE HTML&amp;#62;&amp;#10;&amp;#60;html lang=&amp;#34;en&amp;#34;&amp;#62;&amp;#10;&amp;#60;head&amp;#62;&amp;#10;    &amp;#60;title&amp;#62;First WebGL Application&amp;#6">
+<meta property="og:updated_time" content="2016-03-26T12:18:26.925Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="学习WebGL(三)：创建基本WebGL程序">
-<meta name="twitter:description" content="前面两篇博客都没有设计到代码，这篇博客介绍一个基本的WebGL程序，以此来分析WebGL程序的基本结构。
-WebGL程序的基本结构&amp;lt;!DOCTYPE HTML&amp;gt;
-&amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt;
-
-&amp;lt;head&amp;gt;
-&amp;lt;title&amp;gt;First WebGL Application&amp;lt;/title&amp;gt;
-&amp;lt;meta charse">
+<meta name="twitter:title" content="学习WebGL(三)：创建基本的WebGL程序">
+<meta name="twitter:description" content="前面两篇博客都没有涉及到代码，这篇博客介绍一个基本的WebGL程序，以此来分析WebGL程序的基本结构。
+WebGL程序的基本结构1&amp;#10;&amp;#60;!DOCTYPE HTML&amp;#62;&amp;#10;&amp;#60;html lang=&amp;#34;en&amp;#34;&amp;#62;&amp;#10;&amp;#60;head&amp;#62;&amp;#10;    &amp;#60;title&amp;#62;First WebGL Application&amp;#6">
 
 
 
@@ -90,7 +75,7 @@ WebGL程序的基本结构&amp;lt;!DOCTYPE HTML&amp;gt;
   };
 </script>
 
-  <title> 学习WebGL(三)：创建基本WebGL程序 | 刘贵的博客 </title>
+  <title> 学习WebGL(三)：创建基本的WebGL程序 | 刘贵的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -230,7 +215,7 @@ WebGL程序的基本结构&amp;lt;!DOCTYPE HTML&amp;gt;
             
             
               
-                学习WebGL(三)：创建基本WebGL程序
+                学习WebGL(三)：创建基本的WebGL程序
               
             
           </h1>
@@ -265,8 +250,8 @@ WebGL程序的基本结构&amp;lt;!DOCTYPE HTML&amp;gt;
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/03/26/学习WebGL-三-：创建基本WebGL程序/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/26/学习WebGL-三-：创建基本WebGL程序/" itemprop="commentsCount"></span>
+                <a href="/2016/03/26/学习WebGL-三-：创建基本WebGL的程序/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/26/学习WebGL-三-：创建基本WebGL的程序/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -285,75 +270,11 @@ WebGL程序的基本结构&amp;lt;!DOCTYPE HTML&amp;gt;
       
 
       
-        <span itemprop="articleBody"><p>前面两篇博客都没有设计到代码，这篇博客介绍一个基本的WebGL程序，以此来分析WebGL程序的基本结构。</p>
-<h2 id="WebGL_u7A0B_u5E8F_u7684_u57FA_u672C_u7ED3_u6784"><a href="#WebGL_u7A0B_u5E8F_u7684_u57FA_u672C_u7ED3_u6784" class="headerlink" title="WebGL程序的基本结构"></a>WebGL程序的基本结构</h2><pre><code>&lt;!DOCTYPE HTML&gt;
-&lt;html lang=&quot;en&quot;&gt;
-
-&lt;head&gt;
-&lt;title&gt;First WebGL Application&lt;/title&gt;
-&lt;meta charset=&quot;utf-8&quot;&gt;
-&lt;script id=&quot;shader-vs&quot; type=&quot;x-shader/x-vertex&quot;&gt;
-    // 顶点着色器的源码
-&lt;/script&gt;
-&lt;script id=&quot;shader-fs&quot; type=&quot;x-shader/x-fragment&quot;&gt;
-    //片段着色器的源码
-&lt;/script&gt;
-&lt;script type=&quot;text/javascript&quot;&gt;
-// 定义一些全局变量
-var gl, canvas, shaderProgram, vertexBuffer;
-
-function createGLContext(canvas) {
-  // 创建WebGL环境
-}
-function loadShaderFromDOM(id) {
-    // 创建Shader，引入源码，并且编译链接
-}
-function setupShaders() {
-    // 创建Program，链接Shader
-}
-function setupBuffers() {
-    //设置WebGL缓存对象 
-}
-function draw() {
-   // 绘画的主函数
-}
-// startup函数，负责整个流程
-function startup() {
-    canvas = document.getElementById(&quot;myGLCanvas&quot;);
-    gl = WebGLDebugUtils.makeDebugContext(createGLContext(canvas));
-    setupShaders();
-    setupBuffers();
-    gl.clearColor(0.0, 0.0, 0.0, 1.0);// 定义初始化画布的颜色，即背景色
-    draw();
-}
-&lt;/script&gt;
-&lt;/head&gt;
-
-&lt;body onload=&quot;startup();&quot;&gt;
-&lt;canvas id=&quot;myGLCanvas&quot; width=&quot;500&quot; height=&quot;500&quot;&gt;&lt;/canvas&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre><h2 id="u4EE3_u7801_u5B9E_u73B0"><a href="#u4EE3_u7801_u5B9E_u73B0" class="headerlink" title="代码实现"></a>代码实现</h2><h3 id="u521B_u5EFAWebGL_u73AF_u5883"><a href="#u521B_u5EFAWebGL_u73AF_u5883" class="headerlink" title="创建WebGL环境"></a>创建WebGL环境</h3><p>要使用WebGL提供的API，首先要创建WebGL环境，获取WebGLRenderingContext对象。所以，在HTML代码部分，需要有一个<code>&lt;canvas&gt;</code>标签。获取这个标签后，使用getContext方法获取WebGLRenderingContext对象并且保存在全局变量gl中，然后就可以通过gl来调用WebGL的API和内置变量了。</p>
-<pre><code>function createGLContext(canvas) {
-    var names = [&quot;webgl&quot;, &quot;experimental-webgl&quot;]，
-        context = null;
-    for (var i = 0; i &lt; names.length; i++) {
-        try {
-            context = canvas.getContext(names[i]);
-        } catch (e) {}
-        if (context) {
-            break;
-        }
-    }
-    if (context) { // 设置WebGL会话窗口的大小与Canvas画布的大小一致 
-        context.viewportWidth = canvas.width;
-        context.viewportHeight = canvas.height;
-    } else {
-        alert(&quot;Failed to create WebGL context!&quot;);
-    }
-    return context;
-}
-</code></pre><p>在WebGL标准定稿前，使用getContext()函数输入的参数是”experimental-webgl”，在WebGL标准正式定稿之后，变成了”webgl”，为了考虑新旧浏览器的兼容性，最好将这两个参数都写出来，然后使用一个try-catch语句，只要有一个输入参数获取WebGLRenderingContext对象成功了，就使用break语句跳出。获取环境对象后，访问环境对象的viewportWidth和viewportHeight属性，这两个属性分别表示WebGL最终绘画的视口（viewport）的宽度和高度，设成与canvas画布的逻辑大小一致。如果设置的宽高比与canvas的宽高比不同，则显示的时候看起来会扭曲，如果设置的大小超过了画布的大小，那么会有一部分在画布之外而无法显示。视口的大小可以理解成，我们最终绘画时用到的画布上区域大小。最后，将这个WebGLRenderingContext对象返回给调用函数。</p>
+        <span itemprop="articleBody"><p>前面两篇博客都没有涉及到代码，这篇博客介绍一个基本的WebGL程序，以此来分析WebGL程序的基本结构。</p>
+<h2 id="WebGL_u7A0B_u5E8F_u7684_u57FA_u672C_u7ED3_u6784"><a href="#WebGL_u7A0B_u5E8F_u7684_u57FA_u672C_u7ED3_u6784" class="headerlink" title="WebGL程序的基本结构"></a>WebGL程序的基本结构</h2><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#10;&#60;!DOCTYPE HTML&#62;&#10;&#60;html lang=&#34;en&#34;&#62;&#10;&#60;head&#62;&#10;    &#60;title&#62;First WebGL Application&#60;/title&#62;&#10;    &#60;meta charset=&#34;utf-8&#34;&#62;&#10;    &#60;script id=&#34;shader-vs&#34; type=&#34;x-shader/x-vertex&#34;&#62;&#10;        // &#39030;&#28857;&#30528;&#33394;&#22120;&#30340;&#28304;&#30721;&#10;    &#60;/script&#62;&#10;    &#60;script id=&#34;shader-fs&#34; type=&#34;x-shader/x-fragment&#34;&#62;&#10;        //&#29255;&#27573;&#30528;&#33394;&#22120;&#30340;&#28304;&#30721;&#10;    &#60;/script&#62;&#10;    &#60;script type=&#34;text/javascript&#34;&#62;&#10;    // &#23450;&#20041;&#19968;&#20123;&#20840;&#23616;&#21464;&#37327;&#10;    var gl, canvas, shaderProgram, vertexBuffer;&#10;    &#10;    function createGLContext(canvas) &#123;&#10;      // &#21019;&#24314;WebGL&#29615;&#22659;&#10;    &#125;&#10;    function loadShaderFromDOM(id) &#123;&#10;        // &#21019;&#24314;Shader&#65292;&#24341;&#20837;&#28304;&#30721;&#65292;&#24182;&#19988;&#32534;&#35793;&#38142;&#25509;&#10;    &#125;&#10;    function setupShaders() &#123;&#10;        // &#21019;&#24314;Program&#65292;&#38142;&#25509;Shader&#10;    &#125;&#10;    function setupBuffers() &#123;&#10;        //&#35774;&#32622;WebGL&#32531;&#23384;&#23545;&#35937; &#10;    &#125;&#10;    function draw() &#123;&#10;       // &#32472;&#30011;&#30340;&#20027;&#20989;&#25968;&#10;    &#125;&#10;    // startup&#20989;&#25968;&#65292;&#36127;&#36131;&#25972;&#20010;&#27969;&#31243;&#10;    function startup() &#123;&#10;        canvas = document.getElementById(&#34;myGLCanvas&#34;);&#10;        gl = WebGLDebugUtils.makeDebugContext(createGLContext(canvas));&#10;        setupShaders();&#10;        setupBuffers();&#10;        gl.clearColor(0.0, 0.0, 0.0, 1.0);// &#23450;&#20041;&#21021;&#22987;&#21270;&#30011;&#24067;&#30340;&#39068;&#33394;&#65292;&#21363;&#32972;&#26223;&#33394;&#10;        draw();&#10;    &#125;&#10;    &#60;/script&#62;&#10;&#60;/head&#62;&#10;&#10;&#60;body onload=&#34;startup();&#34;&#62;&#10;    &#60;canvas id=&#34;myGLCanvas&#34; width=&#34;500&#34; height=&#34;500&#34;&#62;&#60;/canvas&#62;&#10;&#60;/body&#62;&#10;&#60;/html&#62;</span><br></pre></td></tr></table></figure>
+<h2 id="u4EE3_u7801_u5B9E_u73B0"><a href="#u4EE3_u7801_u5B9E_u73B0" class="headerlink" title="代码实现"></a>代码实现</h2><h3 id="u521B_u5EFAWebGL_u73AF_u5883"><a href="#u521B_u5EFAWebGL_u73AF_u5883" class="headerlink" title="创建WebGL环境"></a>创建WebGL环境</h3><p>要使用WebGL提供的API，首先要创建WebGL环境，获取WebGLRenderingContext对象。所以，在HTML代码部分，需要有一个<code>&lt;canvas&gt;</code>标签。获取这个标签后，使用getContext方法获取WebGLRenderingContext对象并且保存在全局变量gl中，然后就可以通过gl来调用WebGL的API和内置变量了。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function createGLContext(canvas) &#123;&#10;    var names = [&#34;webgl&#34;, &#34;experimental-webgl&#34;]&#65292;&#10;        context = null;&#10;    for (var i = 0; i &#60; names.length; i++) &#123;&#10;        try &#123;&#10;            context = canvas.getContext(names[i]);&#10;        &#125; catch (e) &#123;&#125;&#10;        if (context) &#123;&#10;            break;&#10;        &#125;&#10;    &#125;&#10;    if (context) &#123; // &#35774;&#32622;WebGL&#20250;&#35805;&#31383;&#21475;&#30340;&#22823;&#23567;&#19982;Canvas&#30011;&#24067;&#30340;&#22823;&#23567;&#19968;&#33268; &#10;        context.viewportWidth = canvas.width;&#10;        context.viewportHeight = canvas.height;&#10;    &#125; else &#123;&#10;        alert(&#34;Failed to create WebGL context!&#34;);&#10;    &#125;&#10;    return context;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p>在WebGL标准定稿前，使用getContext()函数输入的参数是”experimental-webgl”，在WebGL标准正式定稿之后，变成了”webgl”，为了考虑新旧浏览器的兼容性，最好将这两个参数都写出来，然后使用一个try-catch语句，只要有一个输入参数获取WebGLRenderingContext对象成功了，就使用break语句跳出。获取环境对象后，访问环境对象的viewportWidth和viewportHeight属性，这两个属性分别表示WebGL最终绘画的视口（viewport）的宽度和高度，设成与canvas画布的逻辑大小一致。如果设置的宽高比与canvas的宽高比不同，则显示的时候看起来会扭曲，如果设置的大小超过了画布的大小，那么会有一部分在画布之外而无法显示。视口的大小可以理解成，我们最终绘画时用到的画布上区域大小。最后，将这个WebGLRenderingContext对象返回给调用函数。</p>
 <h3 id="u7F16_u5199Shader_u6E90_u7801"><a href="#u7F16_u5199Shader_u6E90_u7801" class="headerlink" title="编写Shader源码"></a>编写Shader源码</h3><p>我们统一将Shader的源码放在<code>&lt;script&gt;</code>标签里面引入，也有另一种用字符串的形式直接将shader源码写在JavaScript代码中的方法，但是第一种方法使用更多一些，而且当Shader的代码较复杂时也方便很多。</p>
 <pre><code>// 顶点着色器(vertex shader)的源码
 &lt;script id=&quot;shader-vs&quot; type=&quot;x-shader/x-vertex&quot;&gt;
@@ -490,7 +411,7 @@ function startup() {
 <p>最后，调用startup()函数依次调用即可。</p>
 <h2 id="WebGL_u7A0B_u5E8F_u7684_u4E00_u822C_u6B65_u9AA4"><a href="#WebGL_u7A0B_u5E8F_u7684_u4E00_u822C_u6B65_u9AA4" class="headerlink" title="WebGL程序的一般步骤"></a>WebGL程序的一般步骤</h2><p>最后，我们总结WebGL程序的一般步骤：</p>
 <ol>
-<li>在HTML代码中加入一个<canvas>标签，在JavaScript代码中引用这个<canvas>标签，创建一个WebGLRenderingContext对象，这个对象包含了所有的WebGL API,一般命名为gl，即<code>gl.function()</code>的方法；</canvas></canvas></li>
+<li>在HTML代码中加入一个<code>&lt;canvas&gt;</code>标签，在JavaScript代码中引用这个<code>&lt;canvas&gt;</code>标签，创建一个WebGLRenderingContext对象，这个对象包含了所有的WebGL API,一般命名为gl，即<code>gl.function()</code>的方法；</li>
 <li>用GLSL ES编写vertex shader和fragment shader的源代码；</li>
 <li>用WebGL的API，创建shader对象，然后引入vertex shader和fragment shader的源代码并且编译；</li>
 <li>用WebGL的API，创建一个程序，程序中引入编译好的shader object，然后链接这个程序，再指示WebGL如何使用这个程序对象进行绘制；</li>
@@ -548,8 +469,8 @@ function startup() {
         
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/03/26/学习WebGL-三-：创建基本WebGL程序/"
-           data-title="学习WebGL(三)：创建基本WebGL程序" data-url="http://yoursite.com/2016/03/26/学习WebGL-三-：创建基本WebGL程序/">
+      <div class="ds-thread" data-thread-key="2016/03/26/学习WebGL-三-：创建基本WebGL的程序/"
+           data-title="学习WebGL(三)：创建基本的WebGL程序" data-url="http://yoursite.com/2016/03/26/学习WebGL-三-：创建基本WebGL的程序/">
       </div>
     
   </div>
